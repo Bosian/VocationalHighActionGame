@@ -2601,7 +2601,8 @@ Private Type boom '²É¤lÄÝ©Ê
 End Type
 
 Private Sub Form_Unload(Cancel As Integer)
-Call sndPlaySound("Data\µLÁn.wav", 1)
+'Call sndPlaySound("Data\µLÁn.wav", 1)
+Call mciSendString("close Data\­I´º.mid", vbNullString, 0, 0)
 End Sub
 Private Sub Timer26_Timer() '±¾±¼©µ¿ð
 Timer26.Enabled = False
@@ -2753,6 +2754,8 @@ End If
 If music = 0 Then
     music = 1
     'Call sndPlaySound("Data\­I´º.wav", 9)
+    Call mciSendString("play Data\­I´º.mid", vbNullString, 0, 0)
+    
     '©_¼¯ª¾ÃÑ
         'Set dsz = dxa.DirectSoundCreate("")
         'dsz.SetCooperativeLevel Me.hWnd, DSSCL_NORMAL

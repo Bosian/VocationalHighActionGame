@@ -1,5 +1,6 @@
 Attribute VB_Name = "Module1"
 Public Declare Function sndPlaySound Lib "winmm.dll" Alias "sndPlaySoundA" (ByVal lpszSoundName As String, ByVal uFlags As Long) As Long
+Public Declare Function mciSendString Lib "winmm.dll" Alias "mciSendStringA" (ByVal lpstrCommand As String, ByVal lpstrReturnString As String, ByVal uReturnLength As Long, ByVal hwndCallback As Long) As Long
 Public Declare Function GetTickCount Lib "kernel32" () As Long
 
 Public Declare Function BitBlt Lib "gdi32" _
