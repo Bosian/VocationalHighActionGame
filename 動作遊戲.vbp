@@ -1,6 +1,6 @@
 Type=Exe
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\Windows\SysWOW64\stdole2.tlb#OLE Automation
-Reference=*\G{E1211242-8E94-11D1-8808-00C04FC2C602}#1.0#0#C:\Windows\SysWOW64\dx7vb.dll#DirectX 7 for Visual Basic Type Library
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\Windows\system32\stdole2.tlb#OLE Automation
+Reference=*\G{E1211242-8E94-11D1-8808-00C04FC2C602}#1.0#0#C:\Windows\system32\dx7vb.dll#DirectX 7 for Visual Basic Type Library
 Object={5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0; MSFLXGRD.OCX
 Form=¥D¿ï³æ.frm
 Module=Module1; Module1.bas
