@@ -2,7 +2,7 @@ VERSION 5.00
 Begin VB.Form Form2 
    BackColor       =   &H00000000&
    BorderStyle     =   1  '單線固定
-   Caption         =   "怪獸歷險 v 4.1 Bata小賢製★"
+   Caption         =   "怪獸歷險 v 5.0.5 小賢製★"
    ClientHeight    =   8190
    ClientLeft      =   3990
    ClientTop       =   2880
@@ -738,7 +738,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim s(1) As Integer '哪一個角色
 Dim k(4) As Integer '動畫
-Dim x(1) As Integer '移動左右因素
+Dim X(1) As Integer '移動左右因素
 Dim nam, m(5) '人物說明
 Dim p(1) As Integer '人物的框閃爍
 Dim dptr(3) As Integer '0)GAME START閃爍 1)Enter次數 2)1P選定角色 3)2P選定角色
@@ -748,29 +748,29 @@ Erase dptr
 End Sub
 Private Sub Form_Load()
 
-Open "first" For Append As #1 '偵測是否為第一次執行程式
+Open "Save\first" For Append As #1 '偵測是否為第一次執行程式
 Close #1
-Open "first" For Input As #1
+Open "Save\first" For Input As #1
     If Not EOF(1) Then Input #1, a
 Close #1
 If Val(a) = 0 Then
     te = 1
-    Open "iv" For Output As #1
+    Open "Save\iv" For Output As #1
         Write #1, te
     Close #1
-    Open "keycode" For Append As #1
+    Open "Save\keycode" For Append As #1
     Close #1
-    Open "keycode" For Output As #1
+    Open "Save\keycode" For Output As #1
         Write #1, 38, 40, 37, 39, 188, 190, 191, _
                   84, 71, 70, 72, 90, 88, 67
     Close #1
     Form3.Show 1
 Else
-    Open "iv" For Input As #1
+    Open "Save\iv" For Input As #1
         If Not EOF(1) Then Input #1, te
     Close #1
     
-    Open "keycode" For Input As #1 '讀取鍵盤的存檔
+    Open "Save\keycode" For Input As #1 '讀取鍵盤的存檔
         For f = 0 To 1
             If Not EOF(1) Then Input #1, keyup(f), keydown(f), keyleft(f), keyright(f), keya(f), keys(f), keyd(f)
         Next
@@ -784,21 +784,24 @@ If reset(0) = 0 Then
     Form2.Width = 12000 '(800*600)
     Form2.Height = 9000
     
-    ReDim smp(7) As Integer
+    ReDim smp(7) As Single
     
+    akiz(0) = 25 '放大倍數(5)*200=amax
+    amax(0) = 5000 '放大之後的寬度
+    akiz(1) = 10
+    amax(1) = 2000
     
-    akiz = 5 '放大倍數(5)*200=amax
-    amax = 1000 '放大之後的寬度
+    smp(0) = 200 / akiz(0) '制裁之光
+    smp(1) = 300 / akiz(0) '神聖火柱
+    smp(2) = 200 / akiz(0) '極光暴雷
+    smp(3) = 300 / akiz(0) '流星散彈雨
     
-    smp(0) = 40 '制裁之光
-    smp(1) = 60 '神聖火柱
-    smp(2) = 40 '極光暴雷
-    smp(3) = 60 '流星散彈雨
+    smp(4) = 300 / akiz(0) '桔梗的意志
+    smp(5) = 200 / akiz(0) '崩裂
+    smp(6) = 300 / akiz(0) '殘月漣漪
+    smp(7) = 200 / akiz(0) '超念動
     
-    smp(4) = 60 '桔梗的意志
-    smp(5) = 40 '崩裂
-    smp(6) = 60 '殘月漣漪
-    smp(7) = 40 '超念動
+    Me.Caption = Program_Name
 End If
 Form2.Left = Screen.Width \ 2 - Form2.Width \ 2
 Form2.Top = Screen.Height \ 2 - Form2.Height \ 2
@@ -905,9 +908,9 @@ Select Case keya(a)
         b = Chr(keya(a))
 End Select
 nam = Array("神鹿", "火鳥", "雷鳥", "熊貓") '角色名稱
-m(0) = Array("絕招Ⅰ：制裁之光" & vbCrLf & "消耗：" & smp(0) * akiz & "MP", "絕招Ⅰ：神聖火柱" & vbCrLf & "消耗：" & smp(1) * akiz & "MP", "絕招Ⅰ：極光暴雷" & vbCrLf & "消耗：" & smp(2) * akiz & "MP", "絕招Ⅰ：流星散彈雨" & vbCrLf & "消耗：" & smp(3) * akiz & "MP")   '絕招1名稱 ⅠⅡⅢⅣ
+m(0) = Array("絕招Ⅰ：制裁之光" & vbCrLf & "消耗：" & smp(0) * akiz(0) & "MP", "絕招Ⅰ：神聖火柱" & vbCrLf & "消耗：" & smp(1) * akiz(0) & "MP", "絕招Ⅰ：極光暴雷" & vbCrLf & "消耗：" & smp(2) * akiz(0) & "MP", "絕招Ⅰ：流星散彈雨" & vbCrLf & "消耗：" & smp(3) * akiz(0) & "MP")   '絕招1名稱 ⅠⅡⅢⅣ
 m(2) = Array("按法：" & b, "按法：" & b, "按法：" & b, "按法：" & b) '絕招1按法
-m(3) = Array("絕招Ⅱ：桔梗的意志" & vbCrLf & "消耗：" & smp(4) * akiz & "MP", "絕招Ⅱ：崩裂" & vbCrLf & "消耗：" & smp(5) * akiz & "MP", "絕招Ⅱ：殘月漣漪" & vbCrLf & "消耗：" & smp(6) * akiz & "MP", "絕招Ⅱ：超念動" & vbCrLf & "消耗：" & smp(7) * akiz & "MP") '絕招2名稱
+m(3) = Array("絕招Ⅱ：桔梗的意志" & vbCrLf & "消耗：" & smp(4) * akiz(0) & "MP", "絕招Ⅱ：崩裂" & vbCrLf & "消耗：" & smp(5) * akiz(0) & "MP", "絕招Ⅱ：殘月漣漪" & vbCrLf & "消耗：" & smp(6) * akiz(0) & "MP", "絕招Ⅱ：超念動" & vbCrLf & "消耗：" & smp(7) * akiz(0) & "MP") '絕招2名稱
 m(5) = Array("按法：↑" & b, "按法：↑" & b, "按法：↑" & b, "按法：↑" & b) '絕招2按法
 If player_2 = 0 Then
     m(1) = Array("簡介：聖天使的淨化之光，有機會淨化敵人。", "簡介：火元素構成的火柱，造成十段連環傷害。", "簡介：造成三段連環傷害，有機會麻痺。", "簡介：發射連續的散彈，並造成擊退效果。") '絕招1簡介
@@ -984,7 +987,7 @@ For f = 0 To 0 + player_2
 Next
 End Sub
 Private Sub imamov(a As Integer, b As Integer)
-If a >= s(b) Then x(b) = 1 Else x(b) = -1 '決定人物名稱移動的方向
+If a >= s(b) Then X(b) = 1 Else X(b) = -1 '決定人物名稱移動的方向
 s(b) = a
 Call one(s(b), (b)) '呼叫角色說明的狀態
 Timer2(b).Enabled = True '角色名稱移動
@@ -1019,9 +1022,9 @@ Next
 End Sub
 Private Sub Timer2_Timer(Index As Integer)
 
-Shape1(Index).Left = Shape1(Index).Left + 250 * x(Index)
+Shape1(Index).Left = Shape1(Index).Left + 250 * X(Index)
 
-If x(Index) = 1 Then
+If X(Index) = 1 Then
     If Shape1(Index).Left >= Image1(s(Index)).Left Then Shape1(Index).Left = Image1(s(Index)).Left: Timer2(Index).Enabled = False
 Else
     If Shape1(Index).Left <= Image1(s(Index)).Left Then Shape1(Index).Left = Image1(s(Index)).Left: Timer2(Index).Enabled = False

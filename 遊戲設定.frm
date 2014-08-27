@@ -670,11 +670,11 @@ Select Case Index
         Call imvo
         Unload Me
     Case 2
-        Open "iv" For Output As #1
+        Open "Save\iv" For Output As #1
             Write #1, te
         Close #1
     
-        Open "keycode" For Output As #1
+        Open "Save\keycode" For Output As #1
             For f = 0 To 1
                 Write #1, keyup(f), keydown(f), keyleft(f), keyright(f), keya(f), keys(f), keyd(f)
             Next
@@ -755,7 +755,7 @@ Label8.Caption = " 如要調成 " & vbCrLf & " ↑↓←→ " & vbCrLf & "請按預設值"
 Call system(1)
 Call imvo
 
-Open "first" For Output As #1
+Open "Save\first" For Output As #1
     Write #1, 1
 Close #1
 End Sub
@@ -765,9 +765,9 @@ If a = 0 Then
         Call Command2_KeyDown((f), m(f), 0)
     Next
 Else
-    Open "keycode" For Append As #1 '保護機制
+    Open "Save\keycode" For Append As #1 '保護機制
     Close #1 '保護機制
-    Open "keycode" For Input As #1 '讀取鍵盤的存檔
+    Open "Save\keycode" For Input As #1 '讀取鍵盤的存檔
         For f = 0 To 13
             If Not EOF(1) Then Input #1, m(f)
             Call Command2_KeyDown((f), m(f), 0)
@@ -776,9 +776,9 @@ Else
 End If
 End Sub
 Public Sub imvo() '影像、聲音設定讀取共用
-Open "iv" For Append As #1
+Open "Save\iv" For Append As #1
 Close #1
-Open "iv" For Input As #1
+Open "Save\iv" For Input As #1
     If Not EOF(1) Then Input #1, te
     If te = 1 Then Check1.Value = 1 Else Check1.Value = 0
 Close #1
