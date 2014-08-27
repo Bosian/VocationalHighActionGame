@@ -3,10 +3,10 @@ Begin VB.Form Form1
    AutoRedraw      =   -1  'True
    BackColor       =   &H00FFFFFF&
    BorderStyle     =   1  '單線固定
-   Caption         =   "動作遊戲 v 3.1"
+   Caption         =   "怪獸歷險 (動作遊戲 v 3.3) 小賢製★"
    ClientHeight    =   8520
-   ClientLeft      =   1935
-   ClientTop       =   1695
+   ClientLeft      =   4635
+   ClientTop       =   1755
    ClientWidth     =   11910
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
@@ -15,12 +15,38 @@ Begin VB.Form Form1
    ScaleHeight     =   568
    ScaleMode       =   3  '像素
    ScaleWidth      =   794
+   Begin VB.Timer Timer24 
+      Enabled         =   0   'False
+      Index           =   0
+      Interval        =   10
+      Left            =   6480
+      Top             =   2640
+   End
+   Begin VB.Timer Timer28 
+      Enabled         =   0   'False
+      Index           =   0
+      Interval        =   10
+      Left            =   5400
+      Top             =   4680
+   End
+   Begin VB.Timer Timer37 
+      Enabled         =   0   'False
+      Interval        =   100
+      Left            =   4680
+      Top             =   1080
+   End
+   Begin VB.Timer Timer36 
+      Enabled         =   0   'False
+      Interval        =   1500
+      Left            =   7080
+      Top             =   360
+   End
    Begin VB.Timer Timer35 
       Enabled         =   0   'False
       Index           =   0
       Interval        =   10
       Left            =   2760
-      Top             =   2760
+      Top             =   3120
    End
    Begin VB.Timer Timer18 
       Enabled         =   0   'False
@@ -55,49 +81,49 @@ Begin VB.Form Form1
       Index           =   7
       Interval        =   50
       Left            =   2760
-      Top             =   1920
+      Top             =   2040
    End
    Begin VB.Timer Timer14 
       Enabled         =   0   'False
       Index           =   6
-      Interval        =   160
+      Interval        =   200
       Left            =   2400
-      Top             =   1920
+      Top             =   2040
    End
    Begin VB.Timer Timer14 
       Enabled         =   0   'False
       Index           =   5
-      Interval        =   100
+      Interval        =   10
       Left            =   2040
-      Top             =   1920
+      Top             =   2040
    End
    Begin VB.Timer Timer14 
       Enabled         =   0   'False
       Index           =   4
       Interval        =   10
       Left            =   1680
-      Top             =   1920
+      Top             =   2040
    End
    Begin VB.Timer Timer14 
       Enabled         =   0   'False
       Index           =   3
       Interval        =   100
       Left            =   1200
-      Top             =   1920
+      Top             =   2040
    End
    Begin VB.Timer Timer14 
       Enabled         =   0   'False
       Index           =   2
       Interval        =   30
       Left            =   840
-      Top             =   1920
+      Top             =   2040
    End
    Begin VB.Timer Timer14 
       Enabled         =   0   'False
       Index           =   1
       Interval        =   100
       Left            =   480
-      Top             =   1920
+      Top             =   2040
    End
    Begin VB.Timer Timer20 
       Enabled         =   0   'False
@@ -132,44 +158,30 @@ Begin VB.Form Form1
       Left            =   3840
       Top             =   5040
    End
-   Begin VB.Timer Timer28 
-      Enabled         =   0   'False
-      Index           =   0
-      Interval        =   30
-      Left            =   3480
-      Top             =   3480
-   End
    Begin VB.Timer Timer27 
       Enabled         =   0   'False
       Index           =   0
       Interval        =   30
-      Left            =   3480
-      Top             =   2880
+      Left            =   3720
+      Top             =   3120
    End
    Begin VB.Timer Timer26 
       Enabled         =   0   'False
       Interval        =   5000
       Left            =   240
-      Top             =   360
+      Top             =   480
    End
    Begin VB.Timer Timer25 
-      Interval        =   500
+      Interval        =   1000
       Left            =   2760
-      Top             =   840
-   End
-   Begin VB.Timer Timer24 
-      Enabled         =   0   'False
-      Index           =   0
-      Interval        =   500
-      Left            =   5880
-      Top             =   3000
+      Top             =   1080
    End
    Begin VB.Timer Timer23 
       Enabled         =   0   'False
       Index           =   0
       Interval        =   10
-      Left            =   5400
-      Top             =   3000
+      Left            =   6000
+      Top             =   2520
    End
    Begin VB.Timer Timer22 
       Enabled         =   0   'False
@@ -237,7 +249,7 @@ Begin VB.Form Form1
       Index           =   0
       Interval        =   10
       Left            =   120
-      Top             =   1920
+      Top             =   2040
    End
    Begin VB.Timer Timer12 
       Enabled         =   0   'False
@@ -277,7 +289,7 @@ Begin VB.Form Form1
       Enabled         =   0   'False
       Interval        =   10
       Left            =   6360
-      Top             =   3960
+      Top             =   3840
    End
    Begin VB.Timer Timer5 
       Enabled         =   0   'False
@@ -302,7 +314,7 @@ Begin VB.Form Form1
    End
    Begin VB.Timer Timer6 
       Enabled         =   0   'False
-      Interval        =   30
+      Interval        =   10
       Left            =   7560
       Top             =   1680
    End
@@ -337,25 +349,60 @@ Begin VB.Form Form1
       Left            =   5760
       Top             =   5760
    End
+   Begin VB.Shape Shape19 
+      BorderStyle     =   0  '透明
+      FillColor       =   &H0080FFFF&
+      FillStyle       =   0  '實心
+      Height          =   135
+      Index           =   0
+      Left            =   3600
+      Top             =   4680
+      Visible         =   0   'False
+      Width           =   375
+   End
+   Begin VB.Shape Shape17 
+      BorderStyle     =   0  '透明
+      FillColor       =   &H0080FFFF&
+      FillStyle       =   0  '實心
+      Height          =   255
+      Index           =   0
+      Left            =   6360
+      Shape           =   3  '圓形
+      Top             =   3960
+      Visible         =   0   'False
+      Width           =   375
+   End
+   Begin VB.Label Label11 
+      Alignment       =   1  '靠右對齊
+      AutoSize        =   -1  'True
+      BackStyle       =   0  '透明
+      Caption         =   "0 連擊"
+      BeginProperty Font 
+         Name            =   "標楷體"
+         Size            =   20.25
+         Charset         =   136
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00C0FFFF&
+      Height          =   405
+      Left            =   2040
+      TabIndex        =   11
+      Top             =   1560
+      Visible         =   0   'False
+      Width           =   1260
+   End
    Begin VB.Shape Shape16 
-      BorderWidth     =   10
+      BorderWidth     =   7
       Height          =   255
       Index           =   0
       Left            =   2760
       Shape           =   2  '橢圓形
-      Top             =   2400
+      Top             =   2880
       Visible         =   0   'False
       Width           =   495
-   End
-   Begin VB.Line Line5 
-      BorderColor     =   &H00000000&
-      BorderWidth     =   2
-      Index           =   0
-      Visible         =   0   'False
-      X1              =   40
-      X2              =   64
-      Y1              =   248
-      Y2              =   264
    End
    Begin VB.Image Image24 
       BorderStyle     =   1  '單線固定
@@ -379,9 +426,9 @@ Begin VB.Form Form1
    End
    Begin VB.Image Image23 
       Height          =   645
-      Left            =   2640
+      Left            =   4080
       Picture         =   "動作遊戲.frx":2405C5
-      Top             =   1200
+      Top             =   960
       Visible         =   0   'False
       Width           =   645
    End
@@ -401,9 +448,9 @@ Begin VB.Form Form1
       EndProperty
       ForeColor       =   &H0080FF80&
       Height          =   435
-      Left            =   2025
+      Left            =   3480
       TabIndex        =   10
-      Top             =   1320
+      Top             =   1080
       Visible         =   0   'False
       Width           =   630
    End
@@ -422,19 +469,19 @@ Begin VB.Form Form1
       BackStyle       =   0  '透明
       Caption         =   "0"
       BeginProperty Font 
-         Name            =   "新細明體"
-         Size            =   14.25
+         Name            =   "標楷體"
+         Size            =   20.25
          Charset         =   136
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   285
-      Left            =   3060
+      Height          =   405
+      Left            =   2985
       TabIndex        =   9
-      Top             =   0
-      Width           =   135
+      Top             =   120
+      Width           =   210
    End
    Begin VB.Image Image21 
       BorderStyle     =   1  '單線固定
@@ -681,6 +728,7 @@ Begin VB.Form Form1
       Left            =   5700
       TabIndex        =   6
       Top             =   0
+      Visible         =   0   'False
       Width           =   720
    End
    Begin VB.Line Line2 
@@ -742,7 +790,7 @@ Begin VB.Form Form1
       Height          =   360
       Left            =   960
       TabIndex        =   1
-      Top             =   840
+      Top             =   1080
       Width           =   1620
    End
    Begin VB.Shape delay 
@@ -761,7 +809,7 @@ Begin VB.Form Form1
       FillStyle       =   0  '實心
       Height          =   375
       Left            =   240
-      Top             =   840
+      Top             =   1080
       Width           =   3000
    End
    Begin VB.Shape Shape8 
@@ -790,7 +838,7 @@ Begin VB.Form Form1
       Height          =   1200
       Left            =   6000
       Picture         =   "動作遊戲.frx":2484A4
-      Top             =   3840
+      Top             =   4200
       Width           =   1200
    End
    Begin VB.Label Label4 
@@ -801,7 +849,7 @@ Begin VB.Form Form1
          Name            =   "新細明體"
          Size            =   18
          Charset         =   136
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -809,11 +857,11 @@ Begin VB.Form Form1
       ForeColor       =   &H000000FF&
       Height          =   360
       Index           =   0
-      Left            =   10515
+      Left            =   10530
       TabIndex        =   3
       Top             =   4680
       Visible         =   0   'False
-      Width           =   105
+      Width           =   90
    End
    Begin VB.Label Label5 
       Alignment       =   1  '靠右對齊
@@ -833,6 +881,7 @@ Begin VB.Form Form1
       Left            =   5280
       TabIndex        =   4
       Top             =   360
+      Visible         =   0   'False
       Width           =   1620
    End
    Begin VB.Label Label3 
@@ -873,7 +922,7 @@ Begin VB.Form Form1
       Height          =   360
       Left            =   960
       TabIndex        =   0
-      Top             =   360
+      Top             =   600
       Width           =   1620
    End
    Begin VB.Shape Shape5 
@@ -882,7 +931,7 @@ Begin VB.Form Form1
       FillStyle       =   0  '實心
       Height          =   375
       Left            =   240
-      Top             =   840
+      Top             =   1080
       Width           =   3000
    End
    Begin VB.Shape hp 
@@ -891,7 +940,7 @@ Begin VB.Form Form1
       FillStyle       =   0  '實心
       Height          =   375
       Left            =   240
-      Top             =   360
+      Top             =   600
       Width           =   3000
    End
    Begin VB.Shape xhp 
@@ -901,6 +950,7 @@ Begin VB.Form Form1
       Height          =   375
       Left            =   4560
       Top             =   360
+      Visible         =   0   'False
       Width           =   3000
    End
    Begin VB.Shape Shape6 
@@ -910,6 +960,7 @@ Begin VB.Form Form1
       Height          =   375
       Left            =   4560
       Top             =   360
+      Visible         =   0   'False
       Width           =   3000
    End
    Begin VB.Shape Shape4 
@@ -918,7 +969,7 @@ Begin VB.Form Form1
       FillStyle       =   0  '實心
       Height          =   375
       Left            =   240
-      Top             =   360
+      Top             =   600
       Width           =   3000
    End
    Begin VB.Line Line1 
@@ -1549,9 +1600,9 @@ Begin VB.Form Form1
    End
    Begin VB.Image Image12 
       Height          =   13365
-      Left            =   14400
+      Left            =   15360
       Picture         =   "動作遊戲.frx":251B64
-      Top             =   -240
+      Top             =   -960
       Visible         =   0   'False
       Width           =   18270
    End
@@ -1569,10 +1620,10 @@ Begin VB.Form Form1
    Begin VB.Shape Shape12 
       FillColor       =   &H00400040&
       FillStyle       =   0  '實心
-      Height          =   2535
+      Height          =   1215
       Left            =   4080
       Shape           =   2  '橢圓形
-      Top             =   3480
+      Top             =   4200
       Visible         =   0   'False
       Width           =   375
    End
@@ -1592,8 +1643,8 @@ Begin VB.Form Form1
       Visible         =   0   'False
       X1              =   256
       X2              =   136
-      Y1              =   768
-      Y2              =   824
+      Y1              =   760
+      Y2              =   816
    End
    Begin VB.Line Line4 
       BorderColor     =   &H00FFFFFF&
@@ -1601,8 +1652,8 @@ Begin VB.Form Form1
       Visible         =   0   'False
       X1              =   16
       X2              =   136
-      Y1              =   768
-      Y2              =   824
+      Y1              =   760
+      Y2              =   816
    End
    Begin VB.Line Line4 
       BorderColor     =   &H00FFFFFF&
@@ -1610,8 +1661,8 @@ Begin VB.Form Form1
       Visible         =   0   'False
       X1              =   136
       X2              =   256
-      Y1              =   744
-      Y2              =   800
+      Y1              =   736
+      Y2              =   792
    End
    Begin VB.Line Line4 
       BorderColor     =   &H00FFFFFF&
@@ -1619,8 +1670,8 @@ Begin VB.Form Form1
       Visible         =   0   'False
       X1              =   16
       X2              =   136
-      Y1              =   800
-      Y2              =   744
+      Y1              =   792
+      Y2              =   736
    End
    Begin VB.Line Line4 
       BorderColor     =   &H00FFFFFF&
@@ -1628,8 +1679,8 @@ Begin VB.Form Form1
       Visible         =   0   'False
       X1              =   14
       X2              =   262
-      Y1              =   800
-      Y2              =   800
+      Y1              =   792
+      Y2              =   792
    End
    Begin VB.Line Line4 
       BorderColor     =   &H00FFFFFF&
@@ -1637,8 +1688,8 @@ Begin VB.Form Form1
       Visible         =   0   'False
       X1              =   16
       X2              =   256
-      Y1              =   768
-      Y2              =   768
+      Y1              =   760
+      Y2              =   760
    End
    Begin VB.Shape Shape10 
       BorderColor     =   &H00FFFFFF&
@@ -1646,7 +1697,7 @@ Begin VB.Form Form1
       Height          =   1215
       Left            =   0
       Shape           =   2  '橢圓形
-      Top             =   11160
+      Top             =   11040
       Visible         =   0   'False
       Width           =   4095
    End
@@ -1660,32 +1711,54 @@ Begin VB.Form Form1
       Visible         =   0   'False
       Width           =   375
    End
+   Begin VB.Line Line5 
+      BorderColor     =   &H00000000&
+      BorderWidth     =   2
+      Index           =   0
+      Visible         =   0   'False
+      X1              =   136
+      X2              =   152
+      Y1              =   168
+      Y2              =   176
+   End
+   Begin VB.Shape Shape18 
+      BorderColor     =   &H0080FFFF&
+      BorderStyle     =   0  '透明
+      FillColor       =   &H0080FFFF&
+      FillStyle       =   0  '實心
+      Height          =   255
+      Index           =   0
+      Left            =   6840
+      Top             =   5880
+      Visible         =   0   'False
+      Width           =   735
+   End
 End
 Attribute VB_Name = "Form1"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-' ☆自創的副刊式●程式本身就有的副程式★計時器
+' ☆自創的副刊式●程式本身就有的副程式★計時器----小賢^^v
 
-Dim s(19) As Integer '0)跳躍計數 1)地圖計數 2)普攻回原位計數 3)火柱範圍 4)GO的閃爍 5)顯示傷害 6)A delay閃爍 7)每隻鳥動畫的不同 8)子彈產生數 9)制裁之光計數 10)流星散彈雨產生計數 11)絕招集氣 12)超必殺(集氣)之計秒關閉 13)四魂之玉計數 14)破魔連珠之計數 15) 流星散彈雨過右邊邊界之計數 16)破魔連珠 17)殘月漣漪 18)殘月漣漪集氣用 19)超念動之震波控制
+Dim s(32) As Integer '0)跳躍計數 1)地圖計數 2)普攻回原位計數 3)火柱範圍 4)GO的閃爍 5)顯示傷害 6)A delay閃爍 7)是否為制光的集氣 8)子彈產生數 9)制裁之光計數 10)流星散彈雨產生計數 11)絕招集氣 12)超必殺(集氣)之計秒關閉 13)四魂之玉計數 14)破魔連珠之計數 15) 流星散彈雨過右邊邊界之計數 16)破魔連珠 17)殘月漣漪 18)殘月漣漪集氣用 19)超念動之震波控制 20)制光集氣結束計數 21)連擊數閃礫 22)超念動之破魔連珠非同步發射 23)破魔連珠確認發射完畢 24)殘月的傷害判斷 25)火柱集氣結束判斷 26)火柱結束判斷 27)暴雷移除計數 28)火柱集氣傷害 29)暴雷集氣非同步出現 30)暴雷結束判斷 31)暴雷集氣移除計數 32)超念動非集氣移除計數
 Dim sic(10) As Integer '四魂之玉消失
-Dim zxcv(5) As Integer '0)限制跳躍時不可上下移動 1)限制普攻不可按住 2)限制A絕招 3)判斷角色往左或往右 4)限制只能讀一次移除程序 5)限制鍵盤不能按(用於絕招集氣
+Dim zxcv(7) As Integer '0)限制跳躍時不可上下移動 1)限制普攻不可按住 2)'流星散彈雨的左右動畫限制 3)判斷角色往左或往右 4)限制只能讀一次移除程序 5)限制鍵盤不能按(用於絕招集氣 6)跳躍限制 7)地圖移動限制部分移動
 Dim x As Integer '跳躍方向
 Dim xy() As Integer '鳥方向
 Dim ttop '暫存top
 Dim k(3) As Integer '動畫1～３)人物動畫
 Dim sk(10) '四魂之玉轉動
-Dim dx
+Dim dx As Integer '背景的移動量
 Dim sh As Integer '影子距離
 Dim ax(1) As Integer '跑步判斷
 Dim run(1) As Integer '跑步增值器
 Dim ok As Integer 'ok為０則地圖移動為１則人物移動
 Dim ma As Integer '數量
 Dim pps As Integer '74被擊中的那一顆
-Dim ppm() As Integer '0)血 1)已擊破 2)鳥閃爍 4)鳥動畫 5)停止判斷 6)計算時間 時間到則call子彈產生演算法
+Dim ppm() As Integer '0)血 1)已擊破 2)鳥閃爍 4)鳥動畫 5)停止判斷 6)計算時間 時間到則call子彈產生演算法 7)連擊數 8)一定時間沒打則連擊數歸零
 Dim n As Integer '擊破數
-Dim Y '傷害值
+Dim y As Integer '傷害值
 Dim akiz As Integer '真實寬度放大率
 Dim amax As Integer '真實寬度放大率(最大值)
 Dim iss As Integer '動畫公式
@@ -1697,11 +1770,25 @@ Dim ell(0) As Integer '0) 流星散彈雨(正負)決定往右或左移動
 Dim up As Integer '觸發第二絕招之一按鍵
 Dim slow(1, 0) As Integer 'delay之陣列
 Dim ven(15) As Integer '1~15 為 六芒星的頂點 第一隻人物的絕招二
-Dim hall(1, 20) As Integer '破魔連珠左右判斷0)左右 1)上下
-Dim stong As Integer '爆發狀態
-Dim vnn(4, 1) As Integer '制裁之光的光環指定
-Dim wmy As Integer '殘月漣漪集氣之後打出的數量
+Dim hall() As Integer '破魔連珠左右判斷0)左右 1)上下
+Dim stong() As Integer '爆氣狀態(每個絕招都獨立，不會因為某個絕招停止爆氣而其它跟著停止)
+Dim vnn() As Integer '制裁之光的光環指定
 Dim cir(10) As Integer '超念動之放大系數
+Dim ys(8) As Integer '魔攻傷害一致性
+Dim gdown As Integer '崩裂的固定位置暫存left
+Dim gup As Integer '崩裂的固定位置暫存top
+Dim gbl As Integer '崩裂程式流程控制
+Dim metor As Integer '流星散彈雨的移特限制
+Dim appshe1 As Integer, appshe2 As Integer '這兩個為超念動的連珠位置指定
+Dim agains As Integer '表示進行下一關遊戲(重讀表單)
+Dim supper As Integer '破魔連珠的發射量
+Dim fireup(1, 10) As Integer '火柱集氣之反彈判斷 0)上下 1)左右
+Dim firr(3, 10) As Integer ' 0)火柱集氣之是否往左右移動 1)判斷是否打中目標 2)判斷是那個目標 3)判斷哪些火邊已移除(運算式)
+
+Const ppmn = 8 'ppm()的宣告數量
+Const wmy = 3 '殘月漣漪集氣之後打出的數量
+Const holy = 8 '制光集氣的總數量
+
 Private Sub Timer26_Timer() '掛掉延遲
 Timer26.Enabled = False
 DoEvents
@@ -1733,29 +1820,31 @@ For f = 1 To ma '移除鳥的系統
     End If
     Unload Timer22(f)
 Next
-n = 0
-ma = 0
-iss = 0
-aikz = 0
-amax = 0
-Erase slow
-Erase ven
-Erase ball
-Erase s
-Erase zxcv
-Erase xy
-Erase k
-Erase ax
-Erase run
-iss = 0
-Y = 0
-ok = 1
+For f = 1 To ppmn
+    For ff = 1 To ma
+        ppm(f, ff) = 0
+    Next
+Next
+iss = 0 '讓重讀表單時正常
+n = 0 '過關判斷
+s(13) = 0
 If a = 1 Then
+    supper = 0
+    up = 0
+    agains = 0
+    aikz = 0
+    amax = 0
+    gdown = 0
+    gup = 0
+    gbl = 0
+    y = 0
     dx = 0
     gz = 1
+    Erase fireup, firr, ys, hall, vnn, cir, slow, ven, ball, s, zxcv, xy, k, ax, run, ppm, s, stong
     Unload Me
     Form2.Show
 Else
+    agains = 1
     Call Form_Load
 End If
 End Sub
@@ -1768,38 +1857,57 @@ If reset(1) = 0 Then
     Form1.Top = 660
     Form1.Width = 12000 '(800*600)
     Form1.Height = 9000
+    
 End If
 
 ok = 1
+metor = 1
+ma = 10
 
+If agains <> 1 Then
+    ReDim vnn(holy, 1) As Integer
+    ReDim stong(7) As Integer
+    
+    Timer5(kikyou).Enabled = True
+    Select Case kikyou
+        Case 0
+            Image1.Picture = Image2(0).Picture
+            sh = 70
+            Label6(0).Caption = "制裁之光"
+            Label6(1).Caption = "桔梗的意志"
+            Timer20(0).Interval = 200
+            Timer20(1).Interval = 400
+        Case 1
+            Image1.Picture = Image3(0).Picture
+            sh = 53
+            Label6(0).Caption = "神聖火柱"
+            Label6(1).Caption = "崩裂"
+            Timer20(0).Interval = 300
+            Timer20(1).Interval = 600
+        Case 2
+            Image1.Picture = Image4(0).Picture
+            sh = 70
+            Label6(0).Caption = "極光暴雷"
+            Label6(1).Caption = "殘月漣漪"
+            Timer20(0).Interval = 200
+            Timer20(1).Interval = 200
+        Case 3
+            Image1.Picture = Image5(0).Picture
+            sh = 60
+            Label6(0).Caption = "流星散彈雨"
+            Label6(1).Caption = "超念動"
+            Timer20(0).Interval = 250
+            Timer20(1).Interval = 500
+    End Select
+    Shape1.Top = Image1.Top + sh
+    Shape1.Left = Image1.Left + Image1.Width \ 2 - 20
+End If
 
+'For f = 0 To 7
+'    stong(f) = 1
+'Next
 
-
-Timer5(kikyou).Enabled = True
-Select Case kikyou
-    Case 0
-        Image1.Picture = Image2(0).Picture
-        sh = 70
-        Label6(0).Caption = "制裁之光"
-        Label6(1).Caption = "桔梗的意志"
-    Case 1
-        Image1.Picture = Image3(0).Picture
-        sh = 53
-        Label6(0).Caption = "神聖火柱"
-        Label6(1).Caption = "崩裂"
-    Case 2
-        Image1.Picture = Image4(0).Picture
-        sh = 70
-        Label6(0).Caption = "極光暴雷"
-        Label6(1).Caption = "殘月漣漪"
-    Case 3
-        Image1.Picture = Image5(0).Picture
-        sh = 60
-        Label6(0).Caption = "流星散彈雨"
-        Label6(1).Caption = "超念動"
-End Select
-Shape1.Top = Image1.Top + sh
-Shape1.Left = Image1.Left + Image1.Width \ 2 - 20
+ReDim xy(ma), ppm(ppmn, ma)
 x = 1
 akiz = 5 '(5)*200=amax
 amax = 1000
@@ -1815,11 +1923,9 @@ For i = 0 To 1
     run(i) = 1
 Next
 
-For f = 1 To 10
-    Call nnee
-Next
+Call nnee '產生演算法
 
-ReDim xy(ma), ppm(6, ma)
+
 For f = 1 To ma
     If f Mod 8 = 0 Then iss = iss + 1
     ppm(4, f) = f - 8 * iss
@@ -1829,38 +1935,37 @@ For f = 1 To ma
     Load Timer11(f)
     Timer11(f).Enabled = True '鳥動畫
 Next
-'If music = 0 Then
-'    music = 1
-'    sndPlaySound "背景.wav", 9
-'    '奇摩知識
-'    '    Set dsz = dxa.DirectSoundCreate("")
-'    '    dsz.SetCooperativeLevel Me.hWnd, DSSCL_NORMAL
-'    '    bu.lFlags = DSBCAPS_STATIC
-'    '    Set dsbz = dsz.CreateSoundBufferFromFile(("背景.wav"), bu, wf)
-'    '    dsbz.Play DSBPLAY_LOOPING '''''''''''''''''''''''預設播放(單次).
-'    '奇摩知識
-'End If
+
+If music = 0 Then
+    music = 1
+    sndPlaySound "背景.wav", 9
+    '奇摩知識
+    '    Set dsz = dxa.DirectSoundCreate("")
+    '    dsz.SetCooperativeLevel Me.hWnd, DSSCL_NORMAL
+    '    bu.lFlags = DSBCAPS_STATIC
+    '    Set dsbz = dsz.CreateSoundBufferFromFile(("背景.wav"), bu, wf)
+    '    dsbz.Play DSBPLAY_LOOPING '''''''''''''''''''''''預設播放(單次).
+    '奇摩知識
+End If
 End Sub
 Public Sub nnee() '產生演算法☆
-If ma < 20 Then
-    ma = ma + 1
-    
+For f = 1 To 10
     Randomize
     
-    Load Image6(ma)
-    Image6(ma).Top = Int(Rnd * (Form1.ScaleHeight - Image6(ma).Height - Line1.Y1 - 10)) + Line1.Y1
-    Image6(ma).Left = Int(Rnd * (Form1.ScaleWidth * 2 - Form1.ScaleWidth)) + Form1.ScaleWidth
-    Image6(ma).Visible = True
+    Load Image6(f)
+    Image6(f).Top = Int(Rnd * (Form1.ScaleHeight - Image6(f).Height - Line1.Y1 - 10)) + Line1.Y1
+    Image6(f).Left = Int(Rnd * (Form1.ScaleWidth * 2 - Form1.ScaleWidth)) + Form1.ScaleWidth
+    Image6(f).Visible = True
     
-    Load Shape2(ma)
-    Shape2(ma).Top = Image6(ma).Top + 65
-    Shape2(ma).Left = Image6(ma).Left + Image6(ma).Width \ 2
-    Shape2(ma).Visible = True
-    Shape2(ma).ZOrder 1
+    Load Shape2(f)
+    Shape2(f).Top = Image6(f).Top + 65
+    Shape2(f).Left = Image6(f).Left + Image6(f).Width \ 2
+    Shape2(f).Visible = True
+    Shape2(f).ZOrder 1
     
-    Load Timer12(ma)
-    Timer12(ma).Enabled = True '移動
-End If
+    Load Timer12(f)
+    Timer12(f).Enabled = True '移動
+Next
 End Sub
 Public Sub spdd(a) '子彈產生演算法
 If s(8) >= 30 Then s(8) = 0
@@ -1903,6 +2008,12 @@ Private Sub Timer19_Timer(Index As Integer) '敵人子彈移動
     DoEvents
 End Sub
 Private Sub Timer12_Timer(Index As Integer) '移動★
+
+    ppm(8, Index) = ppm(8, Index) + 1 '連擊數歸零演算法
+    If ppm(8, Index) >= 14 Then
+        ppm(7, Index) = 0
+        ppm(8, Index) = 0
+    End If '/連擊數歸零演算法
 
     If Timer6.Enabled = True Then Image6(Index).Left = Image6(Index).Left - 10 * run(1)
     
@@ -1978,6 +2089,7 @@ DoEvents
 End Sub
 Private Sub Timer22_Timer(Index As Integer) '鳥的後退
 If ppm(1, Index) <> 1 Then ppm(5, Index) = 0: Timer11(Index).Enabled = True '啟動被打到而停止的特效
+Timer22(Index).Interval = 200 '停止時間
 Timer22(Index).Enabled = False '停止自己
 DoEvents
 End Sub
@@ -2130,7 +2242,10 @@ If s(12) = 25 Then
     Form1.Picture = Image16.Picture
     dx = 0
     zxcv(5) = 0
-    stong = 1
+    
+    stong(kikyou) = 1 '將四魂之玉的力量傳給絕招= =
+    stong(kikyou + 4) = 1 '將四魂之玉的力量傳給絕招= =
+    
     Label10.Caption = Val(Label10.Caption) - 1 & " X"
     If Val(Label10.Caption) = 0 Then Label10.Visible = False: Image23.Visible = False
     For f = 0 To 1
@@ -2146,7 +2261,7 @@ DoEvents
 End Sub
 Private Sub Timer27_Timer(Index As Integer) '制裁之光
 If vnn(Index, 0) = (Index + 1) * 15 Then '如果已經執行完畢則
-    If vnn(Index, 1) <= 12 And vnn(Index, 1) Mod 3 = 0 Or stong = 1 Then
+    If vnn(Index, 1) Mod 15 <= 12 And vnn(Index, 1) Mod 3 = 0 Then
         For f = 1 To ma
             If ppm(1, f) <> 1 Then
                 If coll(Image6(f), Shape3(Index)) Then pps = Image6(f).Index: Call power(0)
@@ -2159,13 +2274,15 @@ If vnn(Index, 0) = (Index + 1) * 15 Then '如果已經執行完畢則
     
     If vnn(Index, 1) = (Index + 1) * 15 + 1 Then '結束
         If Index <> 0 Then '如果不是本尊計時器則
+            s(20) = s(20) + 1
             Unload Timer27(Index) '移除分身計時器
             Unload Shape3(Index) '移除分身大光圈
         Else
             Timer27(Index).Enabled = False
             Shape3(Index).Visible = False
-            Call sg(0) '呼叫絕招移除共用
+            If stong(0) = 0 Then Call sg(0) '呼叫絕招移除共用
         End If
+        If s(20) = holy Then Call sg(0): s(7) = 0: s(20) = 0: Timer14(0).Interval = 10 '呼叫絕招移除共用
     End If
 Else '剛開始執行
     vnn(Index, 0) = vnn(Index, 0) + 1
@@ -2195,33 +2312,168 @@ Image22(Index).Top = Image22(Index).Top - 10 * hall(1, Index)
 
 For f = 1 To ma
     If ppm(1, f) <> 1 Then
-        If coll(Image22(Index), Image6(f)) Then pps = Image6(f).Index: Call power(1)
+        If coll(Image22(Index), Image6(f)) Then pps = Image6(f).Index: Call power(8)
     End If
 Next
 s(16) = s(16) + 1
-If s(16) = 100 Then Unload Image22(Index): Unload Timer34(Index): s(16) = 0: Exit Sub
-If Image22(Index).Left < 0 Then hall(0, Index) = -1
-If Image22(Index).Left + Image22(Index).Width > Form1.ScaleWidth Then hall(0, Index) = 1
-If Image22(Index).Top < 0 Then hall(1, Index) = -1
-If Image22(Index).Top + Image22(Index).Height > Form1.ScaleHeight Then hall(1, Index) = 1
+If s(16) >= 100 Then
+    Unload Image22(Index): Unload Timer34(Index)
+    s(23) = s(23) + 1
+    s(16) = 0
+    If s(23) = supper Then Call sg(kikyou + 4): s(23) = 0
+    Exit Sub
+End If
+If Image22(Index).Left < 0 Or Image22(Index).Left + Image22(Index).Width > Form1.ScaleWidth Then hall(0, Index) = hall(0, Index) * -1
+If Image22(Index).Top < 0 Or Image22(Index).Top + Image22(Index).Height > Form1.ScaleHeight Then hall(1, Index) = hall(1, Index) * -1
 DoEvents
 End Sub
 Private Sub Timer13_Timer(Index As Integer) '火柱動畫
-Shape3(Index).Top = Shape3(Index).Top - 8
-If Timer1.Enabled = True Then Shape3(Index).Top = Shape3(Index).Top - 6.5: Shape3(0).Top = Shape3(0).Top - 2.5 '上固定:傷害固定
-If Timer2.Enabled = True Then Shape3(0).Top = Shape3(0).Top + 2.5 ' 傷害固定
-If Timer3.Enabled = True Or Timer4.Enabled = True Then Shape3(Index).Left = Image1.Left - Shape3(Index).Width \ 2 + Image1.Width \ 2: Shape3(0).Left = Image1.Left - Shape3(0).Width \ 2 + Image1.Width \ 2 '左右固定:傷害固定
-If Shape3(Index).Top <= Image1.Top - Image1.Height * 2 Then Unload Shape3(Index): Unload Timer13(Index) '移除程序
+If Timer8.Enabled = True Then b = ttop Else b = Image1.Top
+
+If Shape3(Index).Top <= b - Image1.Height * 2 Then '2
+    s(26) = s(26) + 1
+    If s(26) < 10 Then '3
+        Unload Shape3(Index): Unload Timer13(Index) '移除程序
+    Else '4
+        Shape3(Index).Visible = False
+        If Shape18(0).Height >= 11 Then '5
+            Shape18(0).Height = Shape18(0).Height - 10
+            Shape18(0).Left = Image1.Left + Image1.Width \ 2 - Shape18(0).Width \ 2
+            Shape18(0).Top = b - Image1.Height * 2
+        Else '6
+            Shape18(0).Visible = False
+            Unload Shape3(Index): Unload Timer13(Index) '移除程序
+            If stong(1) = 0 Then s(26) = 0: s(3) = 0: Call sg(1)
+        End If
+    End If
+Else '1開始
+    Shape3(Index).Top = Shape3(Index).Top - 8 '火邊移動
+    Shape18(0).Left = Image1.Left + Image1.Width \ 2 - Shape18(0).Width \ 2
+    Shape18(0).Top = b - Image1.Height * 2
+    
+    If Timer1.Enabled = True Then Shape3(Index).Top = Shape3(Index).Top - 6.5: Shape3(0).Top = Shape3(0).Top - 2.5   '上固定:傷害固定
+    If Timer2.Enabled = True Then Shape3(0).Top = Shape3(0).Top + 2.5 ' 傷害固定
+    If Timer3.Enabled = True Or Timer4.Enabled = True Then Shape3(Index).Left = Image1.Left - Shape3(Index).Width \ 2 + Image1.Width \ 2: Shape3(0).Left = Image1.Left - Shape3(0).Width \ 2 + Image1.Width \ 2 '左右固定:傷害固定
+End If
+DoEvents
+End Sub
+Private Sub Timer28_Timer(Index As Integer) '火柱集氣動畫
+If firr(1, Index) = 0 Then '第一階段發射火珠
+    Shape17(Index).Top = Shape17(Index).Top - 10 * fireup(0, Index)
+    Shape17(Index).Left = Shape17(Index).Left - 10 * fireup(1, Index) * firr(0, Index)
+    If Shape17(Index).Left < 0 Or Shape17(Index).Left + Shape17(Index).Width > Form1.ScaleWidth Then fireup(1, Index) = fireup(1, Index) * -1 '左右反彈
+    If Shape17(Index).Top < 0 Or Shape17(Index).Top + Shape17(Index).Height > Form1.ScaleHeight Then fireup(0, Index) = fireup(0, Index) * -1: firr(0, Index) = 1
+    If firr(0, Index) = 1 Then
+        For f = 1 To ma
+            If ppm(1, f) <> 1 Then
+                If coll(Shape17(Index), Image6(f)) Then
+                    pps = Image6(f).Index
+                    Unload Shape17(Index)
+                    Call power(9)
+                                        
+                    firr(1, Index) = 1
+                    Shape18(Index).Left = Image6(f).Left + Image6(f).Width \ 2 - Shape18(Index).Width \ 2 '出現在打到的那隻身上
+                    Shape18(Index).Top = Image6(f).Top + Image6(f).Height - Shape18(Index).Height '出現在打到的那隻身上
+                    Shape18(Index).Visible = True
+                    firr(2, Index) = Image6(f).Top
+                    
+                    For ff = 1 To 3 '幾邊
+                        Load Shape3(Index + ff * 10)
+                        Shape3(Index + ff * 10).Left = Image6(f).Left + Image6(f).Width \ 2 - Shape3(Index + ff * 10).Width \ 2 '設定火柱邊框位置
+                        Shape3(Index + ff * 10).Top = Image6(f).Top + Image6(f).Height \ 2 '設定火柱邊框位置
+                    Next
+                    Shape3(Index + 10).Visible = True
+                    Exit For
+                End If
+            End If
+        Next
+    End If
+Else '第二階段產生火柱(火珠碰到敵人之後)
+    If Shape18(Index).Top <= firr(2, Index) - Image6(0).Height * 2 Then
+        Shape3(Index + 10).Visible = False
+        Shape3(Index + 10).Top = firr(2, Index) + Image6(0).Height \ 2
+        If Shape18(Index).Height >= 12 Then Shape18(Index).Height = Shape18(Index).Height - 20 '慢慢移除火心
+        
+        
+        For f = 2 + firr(3, Index) To 3 '幾邊
+            
+            If Shape3(Index + f * 10).Top <= firr(2, Index) - Image6(0).Height * 2 Then '3
+                firr(3, Index) = firr(3, Index) + 1 '已移除火邊(運算式需要)
+                Unload Shape3(Index + f * 10)
+                If f = 3 Then '4'幾邊
+                    Unload Shape18(Index): Unload Timer28(Index): s(25) = s(25) + 1
+                    If s(25) = 5 Then '5'幾柱(方便以後更改)
+                        For ff = 1 To 5 '幾柱
+                            Unload Shape3(10 + ff)
+                        Next
+                        Erase firr, fireup: s(3) = 0: s(25) = 0: s(28) = 0: Call sg(1) '6結束...
+                    End If
+                End If
+                Exit Sub
+                
+            Else '2
+                Shape3(Index + f * 10).Top = Shape3(Index + f * 10).Top - 8
+            End If
+        Next
+    Else '1第二階段開始
+        Shape18(Index).Top = Shape18(Index).Top - 10 '火心
+        Shape18(Index).Height = Shape18(Index).Height + 10 '火心
+        
+        Shape3(Index + 10).Top = Shape3(Index + 10).Top - 8 '第一段火邊
+        For f = 1 To 2 '依前一個火邊上升的程度來啟動這一個火柱上升  '幾邊
+            If Shape3(Index + f * 10).Top <= firr(2, Index) Then Shape3(Index + (f * 10 + 10)).Visible = True: Shape3(Index + (f * 10 + 10)).Top = Shape3(Index + f * 10 + 10).Top - 8 '第二段火邊
+        Next
+    End If
+    
+    s(28) = s(28) + 1
+    If s(28) Mod 5 = 0 Then
+        For ff = 1 To ma '傷害
+            If ppm(1, ff) <> 1 Then
+                If coll(Image6(ff), Shape3(Index + 30)) Then pps = Image6(ff).Index: Call power(1) '幾邊
+            End If
+            DoEvents
+        Next
+    End If
+    
+End If
 DoEvents
 End Sub
 Private Sub Timer23_Timer(Index As Integer) '暴雷
-If Line2(Index).Y2 >= Shape9.Top + Shape9.Height * 17 Then
-    Unload Line2(Index)
-    Unload Timer23(Index)
-Else
+If Line2(Index).Y2 >= Shape9.Top + Shape9.Height * 17 Then '2
+    s(27) = s(27) + 1: Unload Line2(Index): Unload Timer23(Index)
+    If s(27) = 15 Then '3
+        Shape9.Visible = False
+        If stong(2) = 0 Then s(27) = 0: s(3) = 0: Call sg(2) Else s(3) = 20   '4暴雷已放完
+    End If
+Else '1開始
     Line2(Index).Y2 = Line2(Index).Y2 + 9
 End If
 DoEvents
+End Sub
+Private Sub Timer24_Timer(Index As Integer) '暴雷集氣
+For i = 1 To 10
+    t = Line2((Index - 1) * 10 + i).X1
+    Line2((Index - 1) * 10 + i).X1 = Line2((Index - 1) * 10 + i).X2
+    Line2((Index - 1) * 10 + i).X2 = t
+    DoEvents
+Next
+Call lightnings
+For f = 1 To ma
+    If ppm(1, f) <> 1 Then
+        If fscoll(Image6(f)) Then pps = Image6(f).Index: Call power(2)
+    End If
+Next
+s(30) = s(30) + 1
+If s(30) >= 3 Then
+    Unload Timer24(Index)
+    s(31) = s(31) + 1
+    If s(31) = 5 Then
+        For i = 1 To 10 * 5
+            Unload Line2(i)
+        Next
+        s(31) = 0: s(30) = 0: s(27) = 0: s(3) = 0: Call sg(2)
+    End If
+End If
 End Sub
 Private Sub Timer18_Timer(Index As Integer) '殘月漣漪
 Shape3(Index).Visible = True '水波顯現
@@ -2229,40 +2481,43 @@ Shape3(Index).Height = Shape3(Index).Height + 4 '水波範圍變大
 Shape3(Index).Width = Shape3(Index).Width + 16 '水波範圍變大
 Shape3(Index).Left = Shape3(Index).Left - 8 '水波範圍變大
 Shape3(Index).Top = Shape3(Index).Top - 2 '水波範圍變大
-If Shape3(Index).Width Mod 100 <= 5 Or stong = 1 Then
+s(24) = s(24) + 1
+If s(24) Mod (20 - 12 * stong(6)) = 0 Then
     For f = 1 To ma
         If ppm(1, f) <> 1 Then
-            If coll(Image6(f), Shape3(Index)) Or coll(Shape3(Index), Image6(f)) Then pps = Image6(f).Index: Call power(0)
+            If coll(Shape3(Index), Image6(f)) Or coll(Image6(f), Shape3(Index)) Then pps = Image6(f).Index: Call power(6)
         End If
     Next
 End If
 DoEvents
 If Shape3(Index).Width >= 500 Then
-    Unload Shape3(Index): Unload Timer18(Index)
-    If stong = 1 Then
-        s(18) = s(18) + 1
-        If s(18) = 4 + stong * wmy Then s(17) = 0: Call sg(6): s(18) = 0
-    End If
+    s(18) = s(18) + 1: Unload Shape3(Index): Unload Timer18(Index)
+    If s(18) = 4 + stong(6) * wmy Then s(17) = 0: s(18) = 0: s(24) = 0: Call sg(6)
 End If
 End Sub
 Private Sub Timer29_Timer(Index As Integer) '流星散彈雨
 Image13(Index).Left = Image13(Index).Left + 10 * ell(0)
 Image13(Index).Top = Image13(Index).Top + 3 * stat(Index)
+Shape19(Index * stong(3)).Left = Shape19(Index * stong(3)).Left + 10 * ell(0) 'Image13(Index).Left - Shape19(Index * stong(3)).Width
+Shape19(Index * stong(3)).Top = Shape19(Index * stong(3)).Top + 3 * stat(Index)
 For f = 1 To ma
     If ppm(1, f) <> 1 Then
         If coll(Image13(Index), Image6(f)) Then
             pps = Image6(f).Index: Call power(3)
-            If stong = 0 Then Unload Image13(Index): Unload Timer29(Index): Exit Sub
+            If stong(3) = 0 Then
+                Unload Image13(Index): Unload Timer29(Index): s(15) = s(15) + 1
+                If s(15) >= 16 Then s(10) = 0: s(15) = 0: Call sg(3): Shape12.Visible = False: metor = 1
+                Exit Sub
+            End If
         End If
     End If
     DoEvents
 Next
-If con1(Image13(Index)) Or con2(Image13(Index)) Then
+If Image13(Index).Left > Image1.Left + Image1.Width * 6 Or Image13(Index).Left < Image1.Left - Image1.Width * 5 Or con1(Image13(Index)) Or con2(Image13(Index)) Then
     Unload Image13(Index): Unload Timer29(Index)
-    If stong = 1 Then
-        s(15) = s(15) + 1
-        If s(15) = 16 Then s(10) = 0: s(15) = 0: Call sg(3): Shape12.Visible = False '判斷集氣狀態的流星散彈雨發射完畢
-    End If
+    If stong(3) = 1 Then Unload Shape19(Index)
+    s(15) = s(15) + 1
+    If s(15) >= 16 Then s(10) = 0: s(15) = 0: Call sg(3): Shape12.Visible = False: metor = 1 '判斷集氣狀態的流星散彈雨發射完畢
 End If
 DoEvents
 End Sub
@@ -2273,12 +2528,29 @@ Shape16(Index).Width = Shape16(Index).Width + 8
 Shape16(Index).Top = Shape16(Index).Top - 2
 Shape16(Index).Height = Shape16(Index).Height + 4
 cir(3) = cir(3) + 1
-If cir(3) Mod 10 = 0 Then
+
+
+If cir(3) Mod 5 = 0 Then
     If Shape16(Index).BorderWidth > 1 Then
         Shape16(Index).BorderWidth = Shape16(Index).BorderWidth - 1
+        
+        If Shape16(Index).BorderWidth Mod 2 = 0 Then
+            For f = 1 To ma
+                If ppm(1, f) <> 1 Then
+                    If coll(Shape16(Index), Image6(f)) Or coll(Image6(f), Shape16(Index)) Then
+                        pps = Image6(f).Index: Call power(7)
+                    End If
+                End If
+                DoEvents
+            Next
+        End If
     Else
         Unload Shape16(Index)
         Unload Timer35(Index)
+        If stong(7) = 0 Then
+            s(32) = s(32) + 1
+            If s(32) = 4 Then s(32) = 0: Call sg(7): s(19) = 0  '非集氣到這結束
+        End If
     End If
 End If
 DoEvents
@@ -2286,151 +2558,211 @@ End Sub
 Private Sub Timer14_Timer(Index As Integer) '絕招★
 Select Case Index
     Case 0 '制裁之光
-        For f = 0 To 4 * stong '如果為集氣狀態則產生1~4的計時器
-            If f <> 0 Then
-                Load Shape3(f)
-                Load Timer27(f)
-            End If
-            Timer27(f).Enabled = True
-            s(9) = 15 * (f + 1) '數量
-            vnn(f, 0) = 15 * f + 1
-            vnn(f, 1) = 15 * f + 1
-        Next
-        For f = 1 To s(9) '產生制裁之光所需的材料
-            Load Shape11(f) '產生光圈
-            Load Line3(f)
-        Next
-        For f = 1 To 4 * stong '亂數決定2~5(4個)制裁之光的位置
-            Randomize
-            Shape11(15 * f + 1).Top = Int(Rnd * (Form1.ScaleHeight - Shape3(0).Height * 1.5)) - Shape3(0).Height * 1.5
-            Shape11(15 * f + 1).Left = Int(Rnd * Form1.ScaleWidth) + 1
-        Next
-        Timer14(Index).Enabled = False
+        If s(7) = 0 Then
+            For f = 0 To holy * stong(0) '如果為集氣狀態則產生1~4的計時器
+                If f <> 0 Then
+                    Load Shape3(f)
+                    Load Timer27(f)
+                End If
+                s(9) = 15 * (f + 1) '數量
+                vnn(f, 0) = 15 * f + 1
+                vnn(f, 1) = 15 * f + 1
+            Next
+            For f = 1 To s(9) '產生制裁之光所需的材料
+                Load Shape11(f) '產生光圈
+                Load Line3(f)
+            Next
+            For f = 1 To holy * stong(0) '亂數決定2~5(4個)制裁之光的位置
+                Randomize
+                Shape11(15 * f + 1).Top = Int(Rnd * (Form1.ScaleHeight - Shape3(0).Height * 2.2)) - Shape3(0).Height * 1.2
+                Shape11(15 * f + 1).Left = Int(Rnd * (Form1.ScaleWidth - Shape3(0).Width \ 2)) + Shape3(0).Width \ 4
+            Next
+        End If
+        If stong(0) = 0 Then
+            Timer27(0).Interval = 30: Timer27(0).Enabled = True: Timer14(Index).Enabled = False
+        Else
+            Timer14(Index).Interval = 300
+            Timer27(s(7)).Interval = 20
+            Timer27(s(7)).Enabled = True
+            If s(7) = holy Then Timer14(Index).Enabled = False
+            s(7) = s(7) + 1
+        End If
     Case 1 '火柱
+        Dim b As Integer
+        If Timer8.Enabled = True Then b = ttop Else b = Image1.Top
+        
+        Shape18(0).Top = b - Image1.Height * 2
+        Shape18(0).Height = 196
+        
         s(3) = s(3) + 1
-        Load Shape3(s(3)) '產生火柱
-        Shape3(s(3)).Left = Image1.Left - Shape3(s(3)).Width \ 2 + Image1.Width \ 2 '設定火柱的位置
-        Shape3(s(3)).Top = Image1.Top + Image1.Height \ 2 '設定火柱的位置
-        Shape3(s(3)).Visible = True
+        Load Shape3(s(3)) '產生火柱(邊框)
         Load Timer13(s(3)) '產生火柱計時器
+        Shape3(s(3)).Left = Image1.Left - Shape3(s(3)).Width \ 2 + Image1.Width \ 2 '設定火柱的位置
+        Shape3(s(3)).Top = b + Image1.Height \ 2 '設定火柱的位置
+        Shape18(0).Left = Image1.Left + Image1.Width \ 2 - Shape18(0).Width \ 2 '設定中心的位置
+        Shape18(0).Top = b + Image1.Height - Shape18(0).Height '設定中心的位置
+        Shape18(0).Visible = True
+        Shape3(s(3)).Visible = True
         Timer13(s(3)).Enabled = True '啟動火柱計時器
-        If s(3) Mod 2 = 0 Then '五連段
-            For f = 1 To ma
-                If ppm(1, f) <> 1 Then
-                    If coll2(Shape2(f), Shape3(0)) Then
-                        If coll(Image6(f), Shape3(0)) Then pps = Image6(f).Index: Call power(1)
-                    End If
+        
+        For f = 1 To ma
+            If ppm(1, f) <> 1 Then
+                If coll2(Shape2(f), Shape3(0)) Then
+                    If coll(Image6(f), Shape3(0)) Then pps = Image6(f).Index: Call power(1)
                 End If
-            Next
-        End If
-        If s(3) = 10 Then s(3) = 0: Call sg(Index) '火柱已放完
-    Case 2
-        s(3) = s(3) + 1
-        Load Line2(s(3)) '產生雷電
-        Line2(0).Y2 = Shape1.Top + 6
+            End If
+        Next
         
-        Line2(s(3)).X1 = Int(Rnd * Shape9.Width) + Shape9.Left
-        Line2(s(3)).X2 = Line2(s(3)).X1
-        
-        Line2(s(3)).Y1 = Int(Rnd * Shape9.Height) + Shape9.Top
-        Line2(s(3)).Y2 = Line2(s(3)).Y1
+        If stong(1) = 1 Then
+            If s(3) Mod 2 = 0 Then
+                Load Shape18(s(3) \ 2) '產生火柱(中心)
+                Shape18(s(3) \ 2).Height = 1
                 
-        Line2(s(3)).Visible = True
-        Load Timer23(s(3)) '產生暴雷計時器
-        Timer23(s(3)).Enabled = True
-        
-        If s(3) Mod 5 = 0 Then '三連段
-            For f = 1 To ma
-                If ppm(1, f) <> 1 Then
-                    If coll2(Shape2(f), Shape3(0)) Then
-                        If coll(Image6(f), Shape3(0)) Then pps = Image6(f).Index: Call power(2)
+                Shape17(s(3) \ 2).Left = Image1.Left + Image1.Width \ 2 - Shape17(s(3) \ 2).Width \ 2 '火珠
+                Shape17(s(3) \ 2).Top = b
+                Shape17(s(3) \ 2).Visible = True
+                Timer28(s(3) \ 2).Enabled = True '火柱集氣攻擊
+            End If
+        End If
+        If s(3) = 10 Then Timer14(Index).Enabled = False
+    Case 2 '暴雷
+        If s(3) < 15 Then
+            Timer14(Index).Interval = 30
+            s(3) = s(3) + 1
+            Load Line2(s(3)) '產生雷電
+            
+            Line2(s(3)).X1 = Int(Rnd * Shape9.Width) + Shape9.Left
+            Line2(s(3)).X2 = Int(Rnd * Shape9.Width) + Shape9.Left
+            Line2(s(3)).Y1 = Int(Rnd * Shape9.Height) + Shape9.Top
+            Line2(s(3)).Y2 = gup + sh + 6 '放技能的位置+影子+些微調整
+            
+            Line2(s(3)).Visible = True
+            Load Timer23(s(3)) '產生暴雷計時器
+            Timer23(s(3)).Enabled = True
+            
+            If s(3) Mod (5 - 2 * stong(2)) = 0 Then '三連段
+                For f = 1 To ma
+                    If ppm(1, f) <> 1 Then
+                        If coll2(Shape2(f), Shape3(0)) Then
+                            If coll(Image6(f), Shape3(0)) Then pps = Image6(f).Index: Call power(2)
+                        End If
+                    End If
+                Next
+            End If
+        Else
+            If stong(2) = 0 Then
+                Timer14(Index).Enabled = False
+            Else
+                If s(3) = 20 Then '判斷原始暴雷已放完
+                    If s(29) = 0 Then '以下為只執行一次的程式碼
+                        Timer14(Index).Interval = 100
+                        Randomize
+                        For f = 1 To 10 * 5 '幾道
+                            Load Line2(f)
+                            Line2(f).BorderColor = RGB(255, 255, 0)
+                            DoEvents
+                        Next
+                        s(29) = 1
+                    Else
+                        Call lightnings
+                        Load Timer24(s(29))
+                            
+                        Timer24(s(29)).Enabled = True
+                        If s(29) = 5 Then Timer14(Index).Enabled = False: s(29) = 0: Exit Sub '幾道
+                        s(29) = s(29) + 1
                     End If
                 End If
-            Next
+            End If
         End If
-        
-        If s(3) = 15 Then s(3) = 0: Call sg(Index): Shape9.Visible = False '暴雷已放完
     Case 3 '流星散彈雨
         Randomize
         s(10) = s(10) + 1
-        Load Image13(s(10))
+        Load Image13(s(10)) '散彈
         Load Timer29(s(10))
-        Image13(s(10)).Left = Int(Rnd * Shape12.Width) + Shape12.Left
-        Image13(s(10)).Top = Int(Rnd * Shape12.Height) + Shape12.Top
+        Image13(s(10)).Left = Int(Rnd * (Shape12.Width - Image13(s(10)).Width)) + Shape12.Left
+        Image13(s(10)).Top = Int(Rnd * (Shape12.Height - Image13(s(10)).Height)) + Shape12.Top
         Image13(s(10)).Visible = True
         stat(s(10)) = dzxc
         Image13(s(10)).ZOrder 0
-        Timer29(s(10)).Enabled = True
-        If s(10) = 16 Then
-            Timer14(Index).Enabled = False
-            If stong = 0 Then s(10) = 0: Call sg(Index): Shape12.Visible = False
+        If stong(3) = 1 Then
+            Load Shape19(s(10)) '集氣用
+            Shape19(s(10)).Top = Image13(s(10)).Top + Image13(s(10)).Height \ 2 - Shape19(s(10)).Height \ 2
+            If ell(0) = -1 Then
+                Shape19(s(10)).Left = Image13(s(10)).Left + Image13(s(10)).Width
+            Else
+                Shape19(s(10)).Left = Image13(s(10)).Left - Shape19(s(10)).Width
+            End If
+            Shape19(s(10)).Visible = True '/集氣用
         End If
+        Timer29(s(10)).Enabled = True
+        If s(10) >= 16 Then s(10) = 0: Timer14(Index).Enabled = False
     Case 4 '桔梗的意志
         
     '第一條主線....
     
         If ven(14) = 0 Then '畫六芒星
             If ven(0) = 0 Then
-                Line4(0).X1 = Line4(0).X1 - 4
+                Line4(0).X1 = Line4(0).X1 - (4 + 4 * stong(4))
                 If Line4(0).X1 <= Shape10.Left + 16 Then Line4(0).X1 = Shape10.Left + 16: ven(0) = 1: Line4(2).X1 = Line4(0).X1: Line4(2).X2 = Line4(0).X1
             End If
             If ven(1) = 0 Then
-                Line4(0).Y1 = Line4(0).Y1 - 2
+                Line4(0).Y1 = Line4(0).Y1 - (2 + 2 * stong(4))
                 If Line4(0).Y1 <= Shape10.Top + Shape10.Height \ 4 Then Line4(0).Y1 = Shape10.Top + Shape10.Height \ 4: ven(1) = 1: Line4(2).Y1 = Line4(0).Y1: Line4(2).Y2 = Line4(2).Y1: ven(5) = 1
             End If
             
         '第一條分線
             If ven(5) = 1 Then
                 If ven(4) = 0 Then
-                    Line4(2).X2 = Line4(2).X2 + 4
+                    Line4(2).X2 = Line4(2).X2 + (4 + 4 * stong(4))
                     If Line4(2).X2 >= Shape10.Left + Shape10.Width - 17 Then Line4(2).X2 = Shape10.Left + Shape10.Width - 17: ven(4) = 1: ven(8) = 1: Line4(1).X1 = Line4(2).X2: Line4(1).Y1 = Line4(2).Y2: Line4(1).Y2 = Line4(1).Y1: Line4(1).X2 = Line4(1).X1
                 End If
             End If
         '第二條分線
             If ven(8) = 1 Then
                 If ven(9) = 0 Then
-                    Line4(1).X2 = Line4(1).X2 - 4
+                    Line4(1).X2 = Line4(1).X2 - (4 + 4 * stong(4))
                     If Line4(1).X2 <= Shape10.Left + Shape10.Width \ 2 Then Line4(1).X2 = Shape10.Left + Shape10.Width \ 2: ven(9) = 1
                 End If
                 If ven(10) = 0 Then
-                    Line4(1).Y2 = Line4(1).Y2 + 2
-                    If Line4(1).Y2 >= Shape10.Top + Shape10.Height Then Line4(1).Y2 = Shape10.Top + Shape10.Height: ven(10) = 1
+                    Line4(1).Y2 = Line4(1).Y2 + (2 + 2 * stong(4))
+                    If Line4(1).Y2 >= Shape10.Top + Shape10.Height Then Line4(1).Y2 = Shape10.Top + Shape10.Height: ven(10) = 1: ven(14) = 1 '結尾
                 End If
             End If
             
     '第二條主線....
         
             If ven(2) = 0 Then
-                Line4(5).X2 = Line4(5).X2 + 4
+                Line4(5).X2 = Line4(5).X2 + (4 + 4 * stong(4))
                 If Line4(5).X2 >= Shape10.Left + Shape10.Width - 17 Then Line4(5).X2 = Shape10.Left + Shape10.Width - 17: ven(2) = 1: Line4(4).X2 = Line4(5).X2: Line4(4).X1 = Line4(4).X2
             End If
             If ven(3) = 0 Then
-                Line4(5).Y2 = Line4(5).Y2 + 2
+                Line4(5).Y2 = Line4(5).Y2 + (2 + 2 * stong(4))
                 If Line4(5).Y2 >= Shape10.Top + (Shape10.Height \ 4) * 3 Then Line4(5).Y2 = Shape10.Top + (Shape10.Height \ 4) * 3: ven(3) = 1: Line4(4).Y2 = Line4(5).Y2: Line4(4).Y1 = Line4(4).Y2: ven(7) = 1
             End If
         
         '第一條分線
             If ven(7) = 1 Then
                 If ven(6) = 0 Then
-                    Line4(4).X1 = Line4(4).X1 - 4
+                    Line4(4).X1 = Line4(4).X1 - (4 + 4 * stong(4))
                     If Line4(4).X1 <= Shape10.Left + 16 Then Line4(4).X1 = Shape10.Left + 16: ven(6) = 1: ven(11) = 1: Line4(3).X2 = Line4(4).X1: Line4(3).X1 = Line4(3).X2: Line4(3).Y2 = Line4(4).Y1: Line4(3).Y1 = Line4(3).Y2
                 End If
             End If
         '第二條分線
             If ven(11) = 1 Then
                 If ven(12) = 0 Then
-                    Line4(3).X1 = Line4(3).X1 + 4
+                    Line4(3).X1 = Line4(3).X1 + (4 + 4 * stong(4))
                     If Line4(3).X1 >= Shape10.Left + Shape10.Width \ 2 Then Line4(3).X1 = Shape10.Left + Shape10.Width \ 2: ven(12) = 1
                 End If
                 
                 If ven(13) = 0 Then
-                    Line4(3).Y1 = Line4(3).Y1 - 2
-                    If Line4(3).Y1 <= Shape10.Top Then Line4(3).Y1 = Shape10.Top: ven(13) = 1: ven(14) = 1 '結尾
+                    Line4(3).Y1 = Line4(3).Y1 - (2 + 2 * stong(4))
+                    If Line4(3).Y1 <= Shape10.Top Then Line4(3).Y1 = Shape10.Top: ven(13) = 1
                 End If
             End If
                 
         '強力一擊
         Else
+            metor = 1
             If ven(15) = 0 Then
                 Image17.Left = Image1.Left - Image17.Width \ 2 + Image1.Width \ 2 '桔梗位置
                 Image17.Top = Image1.Top - Image17.Height \ 2 + Image1.Height \ 2
@@ -2442,11 +2774,8 @@ Select Case Index
                 
                 Image19.Top = Image18.Top - Image19.Height \ 2 + Image18.Height \ 2 '破魔之氣
                 
-                For f = 0 To 1 '破魔連珠初始之方向指定
-                    For ff = 0 To 20
-                        If ff Mod 2 = 0 Then hall(f, ff) = -1 Else hall(f, ff) = 1
-                    Next
-                Next
+                Call ham99(0) '破魔連珠方向指定
+                
                 ven(15) = 1
             Else
                 Image17.Left = Image17.Left - 10
@@ -2458,11 +2787,11 @@ Select Case Index
                     '打到判斷
                     For f = 1 To ma
                         If ppm(1, f) <> 1 Then
-                            If coll(Image6(f), Image18) Or coll(Image18, Image6(f)) Then pps = Image6(f).Index: Call power(1)
+                            If coll(Image6(f), Image18) Or coll(Image18, Image6(f)) Then pps = Image6(f).Index: Call power(4)
                         End If
                     Next
                     
-                    If stong = 1 Then '集氣判斷
+                    If stong(4) = 1 Then '集氣判斷
                         If Image19.Left + Image19.Width > Form1.ScaleWidth Then
                             Image18.Left = Form1.ScaleWidth - Image18.Width
                             Image19.Top = Image18.Top - Image19.Height \ 2 + Image18.Height \ 2
@@ -2471,7 +2800,7 @@ Select Case Index
                                 Image19.Visible = False
                                 
                                 s(14) = 0
-                                Call sg(Index) '絕招放完
+                                Timer14(Index).Enabled = False '絕招放完
                             Else
                                 Image19.Left = Form1.ScaleWidth - Image19.Width
                                 
@@ -2497,70 +2826,177 @@ Select Case Index
                 End If
             End If
         End If
+        '........
+        '........
     Case 5 '崩裂
-        For f = 1 To 8
-            aaf = f Mod 8
-            Select Case aaf
-                Case 1
-                    Line5(f).X2 = Line5(f).X2 + 10
-                Case 2
-                    Line5(f).X2 = Line5(f).X2 + 10
-                    Line5(f).Y2 = Line5(f).Y2 - 5
-                Case 3
-                    Line5(f).X2 = Line5(f).X2 + 10
-                    Line5(f).Y2 = Line5(f).Y2 - 10
-                Case 4
-                Case 5
-                Case 6
-                Case 7
-                Case 0
-            End Select
-            DoEvents
-        Next
-        'Call sg(Index)
+        If gbl = 0 Then '開始
+            For f = 1 To 3
+                b = Line5(f).X2
+                Line5(f).X1 = Line5(f).X1 - 20 '水平
+                Line5(f).X2 = Line5(f).X2 + 20 '水平
+                If f > 1 Then
+                    Line5(f).Y1 = Line5(f).Y1 - 10 * (f * 2 - 5) 'f=2,f=3　只變正負號
+                    Line5(f).Y2 = Line5(f).Y2 + 10 * (f * 2 - 5) 'f=2,f=3　只變正負號
+                End If
+                If Line5(f).X2 >= gdown + Image1.Width * 5 Then gbl = 1: Exit For
+                DoEvents
+            Next
+        Else '結束
+            If stong(5) = 1 Then
+                For f = 1 To 3
+                    Form1.Left = Form1.Left - 100
+                    Form1.Left = Form1.Left + 100
+                    Form1.Left = Form1.Left + 100
+                    Form1.Left = Form1.Left - 100
+                Next
+            End If
+            For ff = 1 To 3 + stong(5) * 7 '連環傷害
+                For f = 1 To ma
+                    If ppm(1, f) <> 1 Then
+                        If fscoll(Image6(f)) Then pps = Image6(f).Index: Call power(5)
+                    End If
+                Next
+            Next
+            For f = 1 To 3
+                Unload Line5(f)
+            Next
+            gbl = 0
+            Timer14(Index).Enabled = False
+            Call sg(Index)
+        End If
     Case 6 '殘月漣漪
         s(17) = s(17) + 1
-        Timer18(s(17)).Enabled = True
-        If s(17) = 4 + stong * wmy Then
-            If stong = 0 Then
-                s(17) = 0: Call sg(Index)
-            Else
-                Timer14(Index).Enabled = False
-            End If
+        If stong(6) = 0 Then
+            Timer14(6).Interval = 200
+            Shape3(s(17)).BorderColor = &HFF0000 '水波顏色
+            Shape3(s(17)).Left = Image1.Left - Shape3(s(17)).Width \ 2 + Image1.Width \ 2 '水波原始位置
+            Shape3(s(17)).Top = Image1.Top + Image1.Height - 15 '水波原始位置
+        Else
+            Timer14(6).Interval = 160
+            Randomize
+            Shape3(s(17)).BorderColor = &HFF0000 '水波顏色
+            Shape3(s(17)).Left = Int(Rnd * (Form1.ScaleWidth - Shape3(s(17)).Width * 3.5)) + Shape3(s(17)).Width * 1.5 '水波原始位置
+            Shape3(s(17)).Top = Int(Rnd * (Form1.ScaleHeight - Shape3(s(17)).Height * 2 - Line1.Y1)) + Line1.Y1 '水波原始位置
         End If
+        Timer18(s(17)).Enabled = True
+        If s(17) = 4 + stong(6) * wmy Then Timer14(Index).Enabled = False
     Case 7 '超念動
         Form1.FillStyle = 0
         Form1.AutoRedraw = False
         Form1.Refresh
         
-        If cir(0) >= 50 + 50 * stong Then
-            If cir(1) >= 50 Then
-                If cir(2) >= 150 Then '4產生震波
-                    Timer14(7).Interval = 100
-                    s(19) = s(19) + 1
-                    Shape16(s(19)).Visible = True
-                    Timer35(s(19)).Enabled = True
-                    If s(19) = 4 Then Call sg(Index)
+        If cir(1) >= 150 Then
+            If cir(0) >= 50 + 50 * stong(7) Then
+                If cir(2) >= 150 Then
+                    If s(19) >= 4 Then '5終點
+                        If stong(7) = 1 Then
+                            If s(22) < 1 Then Timer14(7).Interval = 100: Call ham99(1) '破魔連珠方向指定
+                            s(22) = s(22) + 1
+                            Image22(s(22)).Left = appshe1 - Image22(s(22)).Width \ 2 + Shape16(0).Width \ 2
+                            Image22(s(22)).Top = appshe2 + Image22(s(22)).Height
+                            Image22(s(22)).Visible = True
+                            Timer34(s(22)).Enabled = True
+                            If s(22) = 12 Then Timer14(Index).Enabled = False
+                        Else
+                            Timer14(Index).Enabled = False
+                        End If
+                    Else '4產生震波
+                        Timer14(7).Interval = 130
+                        s(19) = s(19) + 1
+                        
+                        If s(19) = 1 Then '讓震波位於落點處，不會跟著主人跑
+                            For f = 1 To 4
+                                Shape16(f).Left = Image1.Left + Image1.Width \ 2 - Shape16(f).Width \ 2 '震波位置設定
+                                Shape16(f).Top = Image1.Top + Image1.Height '/震波位置設定
+                            Next
+                            appshe1 = Shape16(1).Left
+                            appshe2 = Shape16(1).Top
+                        End If
+                        
+                        Shape16(s(19)).Visible = True
+                        Timer35(s(19)).Enabled = True
+                    End If
                 Else '3改變計時器速度 & 向下丟
                     cir(2) = cir(2) + 20
                     Timer14(7).Interval = 10
                 End If
-            Else '2向上移
-                cir(1) = cir(1) + 5
+            Else '2變大
+                cir(0) = cir(0) + 5
             End If
-        Else '1變大
-            cir(0) = cir(0) + 5
+        Else '1向上移(起始點)
+            cir(1) = cir(1) + 15
         End If
-        If cir(2) < 150 And stong = 0 Or stong = 1 Then Form1.Circle (Image1.Left + Image1.Width \ 2, ((Image1.Top - Image1.Height * 1.5) - cir(1)) + cir(2)), cir(0)
+        If cir(2) < 150 Then Form1.Circle (Image1.Left + Image1.Width \ 2, ((Image1.Top) - cir(1)) + cir(2)), cir(0)
 End Select
 DoEvents
 End Sub
+Private Sub lightnings() '暴雷共用
+For f = 0 To 4
+    '幾道--設定每道雷的第一個位置
+    Line2(10 * f + 1).X1 = Int(Rnd * Form1.ScaleWidth)
+    Line2(10 * f + 1).X2 = Line2(10 * f + 1).X1 + 30
+    Line2(10 * f + 1).Y1 = Int(Rnd * (Form1.ScaleHeight)) - Form1.ScaleHeight \ 2
+    Line2(10 * f + 1).Y2 = Line2(10 * f + 1).Y1 + 40
+    Line2(10 * f + 1).Visible = True
+    
+    For i = 2 To 10 '設定每道雷的第二到最後個位置
+        Line2(f * 10 + i).X1 = Line2(f * 10 + i - 1).X2 '雷的特性
+        Line2(f * 10 + i).Y1 = Line2(f * 10 + i - 1).Y2 '雷的特性
+        Line2(f * 10 + i).X2 = Line2(f * 10 + i - 1).X1 '雷的特性
+        Line2(f * 10 + i).Y2 = Line2(f * 10 + i - 1).Y2 + 40 '雷的特性
+        Line2(f * 10 + i).Visible = True
+        DoEvents
+    Next
+Next
+End Sub
+Private Sub tai(a As Integer) '異常狀態演算法
+Randomize
+c = Int(Rnd * 5) + 1
+If c = 2 Then Timer22(pps).Interval = 5000 Else Timer22(pps).Interval = 200 '暴雷的特殊效果
+End Sub
+Public Sub ham99(a As Integer) '破魔連珠方向
+Select Case a
+    Case 0 '桔梗的意志
+        supper = 20
+        ReDim hall(1, supper)
+        For f = 0 To 1 '破魔連珠初始之方向指定
+            For ff = 0 To 20
+                If ff Mod 2 = 0 Then hall(f, ff) = -1 Else hall(f, ff) = 1
+            Next
+        Next
+    Case 1 '超念動
+        supper = 12
+        ReDim hall(1, supper)
+        For f = 0 To 1 '破魔連珠初始之方向指定
+            For ff = 0 To 12
+                Select Case ff Mod 4
+                    Case 1
+                        hall(f, ff) = 1 * (f * 2 - 1)
+                    Case 2
+                        hall(f, ff) = -1
+                    Case 3
+                        hall(f, ff) = 1
+                    Case 0
+                        hall(f, ff) = -1 * (f * 2 - 1)
+                End Select
+            Next
+        Next
+End Select
+End Sub
 Public Sub mpss(a As Integer) '損耗MP演算法☆
-Shape3(0).Left = Image1.Left - Shape3(0).Width \ 2 + Image1.Width \ 2 '火柱基底
-Shape3(0).Top = Image1.Top + Image1.Height \ 2
-If mp.Width >= 40 Then
+If mp.Width >= 50 Then
+    Dim d As Integer
+    If Timer8.Enabled = True Then d = ttop Else d = Image1.Top
+    
+    gdown = Image1.Left '主角位置 Left
+    gup = Image1.Top '主角位置Top
+    
+    Shape3(0).Left = Image1.Left - Shape3(0).Width \ 2 + Image1.Width \ 2 '火柱基底
+    Shape3(0).Top = d + Image1.Height \ 2
+    
+
     Timer25.Enabled = False 'mp增加停止
-    If kikyou = 3 Or a = 6 Then Timer1.Enabled = False: Timer2.Enabled = False: Timer3.Enabled = False: Timer4.Enabled = False: Timer6.Enabled = False: zxcv(2) = 1
+    If a = 3 Or a = 4 Then metor = 0: zxcv(2) = zxcv(3) '走路限制
     If a = kikyou + 4 Then
         Timer21(1).Enabled = False '停止A delay閃爍(絕招二)
         delay(1).Visible = False: delay(1).Height = 1: delay(1).Top = 81
@@ -2572,11 +3008,11 @@ If mp.Width >= 40 Then
     Label2.Caption = mp.Width * akiz & "/" & amax
     Image12.Visible = True: Image12.ZOrder 1
     Select Case a
-        Case 0
+        Case 0 '制裁之光
             Shape3(0).BorderColor = RGB(255, 255, 0) '指定範圍的顏色值
         
             Shape11(0).Left = Image1.Left + Image1.Width \ 2 - Shape11(0).Width \ 2
-            Shape11(0).Top = Image1.Top - 190
+            Shape11(0).Top = d - 190
             
             'Shape11(0).Left = Image1.Left - 175
             'Shape11(0).Top = Image1.Top - 100
@@ -2584,7 +3020,22 @@ If mp.Width >= 40 Then
             Line3(0).Y1 = Shape11(0).Top '光柱的左上角
             Line3(0).X2 = Shape11(0).Left + Shape11(0).Width \ 2  '光柱的右下角
             Line3(0).Y2 = Shape11(0).Top + Shape11(0).Height \ 2  '光柱的右下角
+            
+            If stong(a) = 1 Then c = 2: b = 2 Else c = 2: b = 1
         Case 1 '火柱
+            If stong(1) = 1 Then
+                For f = 1 To 5 '幾柱
+                    Load Shape17(f)
+                    Load Timer28(f)
+                    fireup(0, f) = 1
+                    If f Mod 2 = 0 Then fireup(1, f) = 1 Else fireup(1, f) = -1
+                Next
+            End If
+            Shape18(0).Height = 1
+            Shape18(0).Left = Image1.Left + Image1.Width \ 2 - Shape18(0).Width \ 2
+            Shape18(0).Top = d + Image1.Height - Shape18(0).Height
+            Shape18(0).Visible = True
+            
             '------奇摩知識
             Set ds = dxa.DirectSoundCreate("")
             ds.SetCooperativeLevel Me.hWnd, DSSCL_NORMAL
@@ -2592,9 +3043,11 @@ If mp.Width >= 40 Then
             Set dsb = ds.CreateSoundBufferFromFile(("火柱.wav"), bu, wf)
             dsb.Play DSBPLAY_DEFAULT '''''''''''''''''''''''預設播放(單次).
             '------奇摩知識
+            
+            If stong(a) = 1 Then c = 2: b = 2 Else c = 2: b = 1
         Case 2 '暴雷
             Shape9.Left = Image1.Left - 80 '上面的黑洞
-            Shape9.Top = Image1.Top - 180 '上面的黑洞
+            Shape9.Top = d - 180 '上面的黑洞
             Shape9.Visible = True
         
             Set dscc = dxa.DirectSoundCreate("")
@@ -2602,15 +3055,18 @@ If mp.Width >= 40 Then
             bu.lFlags = DSBCAPS_STATIC
             Set dsbcc = dscc.CreateSoundBufferFromFile(("暴雷.wav"), bu, wf)
             dsbcc.Play DSBPLAY_DEFAULT '''''''''''''''''''''''預設播放(單次).
-        Case 3
+            
+            If stong(a) = 1 Then c = 5: b = 2 Else c = 5: b = 3
+        Case 3 '流星散彈雨
             ReDim stat(20)
             dzxc = 0
             If zxcv(3) = 1 Then Image13(0).Picture = Image14(1).Picture: ell(0) = -1: Shape12.Left = Image1.Left + Image1.Width - Shape12.Width Else Image13(0).Picture = Image14(0).Picture: ell(0) = 1: Shape12.Left = Image1.Left '0為右1為左
-            Shape12.Top = Image1.Top + Image1.Height \ 2 - Shape12.Height \ 2
+            Shape12.Top = d + Image1.Height \ 2 - Shape12.Height \ 2
             Shape12.Visible = True
-        Case 4 '絕招二
+            
+        Case 4 '桔梗的意志
             Shape10.Left = Image1.Left - Shape10.Width \ 2 + Image1.Width \ 2
-            Shape10.Top = Image1.Top + Image1.Height \ 2
+            Shape10.Top = d + Image1.Height \ 2
             Shape10.Visible = True
             
             Line4(5).X1 = Shape10.Left + Shape10.Width \ 2 '設定初始化頂點
@@ -2627,17 +3083,17 @@ If mp.Width >= 40 Then
             For f = 0 To 5
                 Line4(f).Visible = True
             Next
+            
+            If stong(a) = 1 Then c = 2: b = 2 Else c = 2: b = 1
         Case 5 '崩裂
-            For f = 1 To 8
-                Load Line5(f)
+            For f = 1 To 3
+                Load Line5(f) '崩裂線條
                 Line5(f).X1 = Image1.Left + Image1.Width \ 2
-                Line5(f).Y1 = Image1.Top + Image1.Height \ 2
+                Line5(f).Y1 = d + Image1.Height \ 2
                 Line5(f).X2 = Line5(f).X1
                 Line5(f).Y2 = Line5(f).Y1
-                
                 Line5(f).Visible = True
             Next
-            
             
         '-----奇摩知識
             Set dscd = dxa.DirectSoundCreate("")
@@ -2646,37 +3102,38 @@ If mp.Width >= 40 Then
             Set dsbd = dscd.CreateSoundBufferFromFile(("崩裂.wav"), bu, wf)
             dsbd.Play DSBPLAY_DEFAULT '''''''''''''''''''''''預設播放(單次).
         '-----奇摩知識
+        
+            If stong(a) = 1 Then c = 2: b = 2 Else c = 2: b = 1
         Case 6 '殘月漣漪
-            wmy = 2
-            For f = 1 To 4 + stong * wmy
+            For f = 1 To 4 + stong(6) * wmy
                 Load Shape3(f)
                 Shape3(f).Width = 60 '水波原始大小
                 Shape3(f).Height = 30 '水波原始大小
                 
                 Load Timer18(f)
-                
-                If stong = 0 Then
-                    Shape3(f).Left = Image1.Left - Shape3(f).Width \ 2 + Image1.Width \ 2 '水波原始位置
-                    Shape3(f).Top = Image1.Top + Image1.Height - 15 '水波原始位置
-                    Shape3(f).BorderColor = &HFF0000 '水波顏色
-                Else
-                    Randomize
-                    Shape3(f).Left = Int(Rnd * (Form1.ScaleWidth - Shape3(f).Width * 2)) + Shape3(f).Width '水波原始位置
-                    Shape3(f).Top = Int(Rnd * (Form1.ScaleHeight - Shape3(f).Height * 2)) + Shape3(f).Height '水波原始位置
-                    Shape3(f).BorderColor = &HFF0000 '水波顏色
-                End If
             Next
+            
+            If stong(a) = 1 Then c = 2: b = 2 Else c = 2: b = 1
         Case 7 '超念動
+            cir(0) = 5
+            Timer14(7).Interval = 50
             For f = 1 To 4
                 Load Shape16(f)
                 Load Timer35(f)
-                Shape16(f).Left = Image1.Left + Image1.Width \ 2 - Shape16(f).Width \ 2
-                Shape16(f).Top = Image1.Top + Image1.Height
             Next
+            If stong(7) = 1 Then
+                For f = 1 To 12
+                    Load Image22(f)
+                    Load Timer34(f)
+                Next
+            End If
+            
+            If stong(a) = 1 Then c = 2: b = 2 Else c = 2: b = 1
     End Select
-    For f = 0 To 1
-        delay(f).FillColor = &H80FF80
-    Next
+    
+    ys(kikyou) = Int(Rnd * 10 + c) + 2 + b連環傷害
+    ys(kikyou + 4) = Int(Rnd * 10 + c) + 2 + b '/連環傷害
+    
     Timer14(a).Enabled = True
 End If
 End Sub
@@ -2692,42 +3149,38 @@ End If
 
 End Sub
 Public Sub sg(a As Integer) '絕招共用
-
 Timer14(a).Enabled = False
 
-Select Case a '絕招delay
-    Case Is <= 3 '絕招一
-        If a = 1 Then Erase vnn
-        delay(0).Visible = True: Timer20(0).Enabled = True
-Case Else '絕招二
-    delay(1).Visible = True: Timer20(1).Enabled = True
-End Select
-If a = 4 Then '桔梗的意志
-    Shape10.Visible = False
-    Image18.Visible = False
-    Image19.Visible = False
-    Image19.Left = -11111
-    For f = 0 To 5
-        Line4(f).Visible = False
-        Line4(f).X1 = -11
-        Line4(f).X2 = -11
-        Line4(f).Y1 = -11
-        Line4(f).Y2 = -11
-    Next
-    For f = 0 To 15
-        ven(f) = 0
-    Next
-Else
-    If a = 5 Then '崩裂
-        For f = 1 To 10
-            Unload Line5(f)
+If a <= 3 Then delay(0).Visible = True: Timer20(0).Enabled = True Else delay(1).Visible = True: Timer20(1).Enabled = True '絕招delay
+
+Select Case a
+    Case 0 '制裁之光
+        Erase vnn
+        ReDim vnn(holy, 1) As Integer
+    Case 3 '流星散彈雨
+        metor = 1
+    Case 4 '桔梗的意志
+        Shape10.Visible = False
+        Image18.Visible = False
+        Image19.Visible = False
+        Image19.Left = -11111
+        For f = 0 To 5
+            Line4(f).Visible = False
+            Line4(f).X1 = -11
+            Line4(f).X2 = -11
+            Line4(f).Y1 = -11
+            Line4(f).Y2 = -11
         Next
-    End If
-End If
+        For f = 0 To 15
+            ven(f) = 0
+        Next
+    Case 7 '超念動
+        Erase cir: s(19) = 0: s(22) = 0
+End Select
 
-stong = 0
+delay(a \ 4).FillColor = &H80FF80
+stong(a) = 0
 
-zxcv(2) = 0 '絕招放完
 End Sub
 Private Sub Timer20_Timer(Index As Integer) '絕招delay
 delay(Index).Height = delay(Index).Height + 5
@@ -2754,7 +3207,7 @@ If (Timer3.Enabled = True And Timer8.Enabled = True) Or (Timer4.Enabled = True A
         Shape1.Left = Shape1.Left + 20
     End If
     s(2) = s(2) + 1
-    Call sppr(5) '判斷是否打中
+    Call sppr(10) '判斷是否打中
     
     If s(2) >= 5 Then s(2) = 0: Timer10.Enabled = False
 Else
@@ -2763,7 +3216,7 @@ Else
         Shape1.Left = Shape1.Left + 10
         s(2) = s(2) + 1
         If s(2) >= 5 Then
-            Call sppr(5) '判斷是否打中
+            Call sppr(9) '判斷是否打中
             
             Image1.Left = Image1.Left - 50
             Shape1.Left = Shape1.Left - 50
@@ -2775,7 +3228,7 @@ Else
         Shape1.Left = Shape1.Left - 10
         s(2) = s(2) + 1
         If s(2) >= 5 Then
-            Call sppr(5) '判斷是否打中
+            Call sppr(9) '判斷是否打中
             
             Image1.Left = Image1.Left + 50
             Shape1.Left = Shape1.Left + 50
@@ -2790,7 +3243,6 @@ Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer) '按鍵按下●
 If zxcv(5) = 1 Then Exit Sub
 If KeyCode = keyup Then dzxc = -1
 If KeyCode = keydown Then dzxc = 1 '流星上下判斷
-If zxcv(2) = 0 Then  'A絕招
     If (zxcv(0) = 1 And KeyCode = keyup) Or (zxcv(0) = 1 And KeyCode = keydown) Then Exit Sub
     Select Case KeyCode
         Case keyleft '左37
@@ -2823,19 +3275,17 @@ If zxcv(2) = 0 Then  'A絕招
             zxcv(1) = zxcv(1) + 1
             If zxcv(1) = 1 Then Timer10.Enabled = True
         Case keyd 'D 跳躍68
-            zxcv(0) = zxcv(0) + 1
-            
-            Timer1.Enabled = False '上 停止
-            Timer2.Enabled = False '下 停止
-            
-            If zxcv(0) = 1 Then
+            If zxcv(0) = 0 Then
+                zxcv(0) = 1
                 ttop = Image1.Top
                 Timer8.Enabled = True
             End If
         Case 113 'F2
-            Call ex(0)
+            If Timer20(0).Enabled = True And Timer20(1).Enabled = True Or _
+               Timer20(0).Enabled = True And Timer21(1).Enabled = True Or _
+               Timer21(0).Enabled = True And Timer20(1).Enabled = True Or _
+               Timer21(0).Enabled = True And Timer21(1).Enabled = True Then Call ex(0)
     End Select
-End If
 End Sub
 Private Sub Form_KeyUp(KeyCode As Integer, Shift As Integer) '按鍵彈起●
 Select Case KeyCode
@@ -2881,52 +3331,57 @@ End If
 Timer9(Index).Enabled = False
 End Sub
 Private Sub Timer8_Timer() '跳躍★
-
-s(0) = s(0) + 1
+If x = 1 Then s(0) = s(0) + 1 Else s(0) = s(0) - 1
 Image1.Top = Image1.Top - (12 - s(0)) * x
-Shape1.Width = Shape1.Width - (3 - s(0) \ 4) * x
-Shape1.Left = Shape1.Left + (1.5 - s(0) \ 6) * x
-If s(0) = 12 Then
-    x = -1
-    s(0) = 0
-    If Image1.Top = ttop Then
-        Timer8.Enabled = False
-        x = 1
-        zxcv(0) = 0
+'Shape1.Left = Shape1.Left + 1 * x
+'Shape1.Width = Shape1.Width - 2 * x
+If s(0) = 11 Then
+    If zxcv(6) = 0 Then
+        s(0) = 12: x = -1
+        zxcv(6) = zxcv(6) + 1
+    Else
+        zxcv(6) = zxcv(6) - 1
     End If
 End If
+If Image1.Top >= ttop Then x = 1: zxcv(0) = 0: s(0) = 0: zxcv(6) = 0: Image1.Top = ttop: Timer8.Enabled = False
 DoEvents
 End Sub
 Private Sub Timer1_Timer() '上★
+If metor = 0 Or Timer8.Enabled = True Then Exit Sub
+
 Image1.Top = Image1.Top - 10
 Shape1.Top = Image1.Top + sh
 If Image1.Top < 0 + Line1.Y1 Then Image1.Top = 0 + Line1.Y1: Shape1.Top = Image1.Top + sh
 End Sub
 Private Sub Timer2_Timer() '下★
+If metor = 0 Or Timer8.Enabled = True Then Exit Sub
+
 Image1.Top = Image1.Top + 10
 Shape1.Top = Image1.Top + sh
 If Image1.Top + Image1.Height > Form1.ScaleHeight - 10 Then Image1.Top = Form1.ScaleHeight - Image1.Height - 10: Shape1.Top = Image1.Top + sh
 End Sub
 Private Sub Timer3_Timer() '左★
+If metor = 0 Then Exit Sub
+
 Image1.Left = Image1.Left - 10 * run(0)
 Shape1.Left = Image1.Left + Image1.Width \ 2
 Timer5(kikyou).Enabled = True '啟動動畫
 If Image1.Left < 0 + 10 Then Image1.Left = 0 + 10
 End Sub
 Private Sub Timer4_Timer() '右★
-If Image1.Left >= Form1.ScaleWidth \ 2 Then '地圖是否移動
+If metor = 0 Then Exit Sub
+
+If Image1.Left + Image1.Width \ 2 >= Form1.ScaleWidth \ 2 Then '地圖是否移動
     If ok = 0 Then
+        zxcv(7) = 1
         Timer6.Enabled = True
+        Shape1.Left = Image1.Left + Image1.Width \ 2 - 20
         Exit Sub
     Else
         If Image1.Left + Image1.Width > Form1.ScaleWidth - 10 Then Image1.Left = Form1.ScaleWidth - Image1.Width - 10
     End If
 End If
-If Timer6.Enabled = True Then
-    Image1.Left = Image1.Left + 10 * run(1) - 15 * run(1)
-Else
-    Image1.Left = Image1.Left + 10 * run(1)
-End If
+Image1.Left = Image1.Left + 10 * run(1)
 Shape1.Left = Image1.Left + Image1.Width \ 2 - 20
 Timer5(kikyou).Enabled = True '啟動動畫
 End Sub
@@ -2935,6 +3390,7 @@ k(kikyou) = k(kikyou) + 1
 Select Case kikyou
     Case 0
         If k(kikyou) = 6 Then k(kikyou) = 0
+        If metor = 0 Then zxcv(3) = zxcv(2) '桔梗的意志的左右動畫限制
         If zxcv(3) = 0 Then
             Image1.Picture = Image2(k(kikyou)).Picture
         Else
@@ -2956,6 +3412,7 @@ Select Case kikyou
         End If
     Case 3
         If k(kikyou) = 6 Then k(kikyou) = 0
+        If metor = 0 Then zxcv(3) = zxcv(2) '流星散彈雨的左右動畫限制
         If zxcv(3) = 0 Then
             Image1.Picture = Image5(k(kikyou)).Picture
         Else
@@ -2976,17 +3433,17 @@ Image20(Index).Picture = Image21(sk(Index)).Picture
 If Timer6.Enabled = True Then Image20(Index).Left = Image20(Index).Left - 20 * run(1): Shape15(Index).Left = Shape15(Index).Left - 20 * run(1) '地圖移動
 If coll(Image20(Index), Image1) Then
     Label10.Visible = True: Image23.Visible = True: Label10.Caption = Val(Label10.Caption) + 1 & " X": Image20(Index).Left = -1111: Shape15(Index).Left = -1111
-    If hp.Width >= 180 Then '補血
+    If hp.Width >= 150 Then '補血
         hp.Width = 200
     Else
-        hp.Width = hp.Width + 20
+        hp.Width = hp.Width + 50
     End If
     Label1.Caption = hp.Width * akiz & "/" & amax
     
-    If mp.Width >= 180 Then '補魔
+    If mp.Width >= 150 Then '補魔
         mp.Width = 200
     Else
-        mp.Width = mp.Width + 20
+        mp.Width = mp.Width + 50
     End If
     Label2.Caption = mp.Width * akiz & "/" & amax
 End If
@@ -3008,13 +3465,15 @@ Label2.Caption = mp.Width * akiz & "/" & amax
 End Sub
 Public Sub kizzs() '角色損血演算法☆
 If s(10) = 0 And hp.Visible = True Then
-    'Call voice
+    Call voice
     Randomize
-    ym = Int(Rnd * 8) + 5
+    ym = Int(Rnd * 7) + 1
     If hp.Width - ym <= 0 Then
         hp.Visible = False
         Label1.Caption = "0/" & amax
-        zxcv(2) = 1
+        
+        metor = 0
+        zxcv(5) = 1
         Call ex(1): Exit Sub
     Else
         hp.Width = hp.Width - ym
@@ -3044,14 +3503,23 @@ Next
 End Sub
 Public Sub power(a As Integer) '敵人損血演算法☆
 '-------------------------------------'0～３範圍技,4 普攻,5 跳躍攻擊
-ppm(5, pps) = 1 '停止時的特效
-Timer11(pps).Enabled = False
+Label7.Visible = True: Label5.Visible = True: xhp.Visible = True: Shape6.Visible = True: Label11.Visible = True '怪物血量顯示
+Timer37.Enabled = False '連擊數不閃
+Timer36.Enabled = False '一定時間血量
 
-Randomize
-sdj = Int(Rnd * 3) + 1
-If a = 2 And sdj = 2 Then Timer22(pps).Interval = 5000 Else Timer22(pps).Interval = 200 '暴雷的特殊效果
-    
-If a <= 3 Then a = 10 Else a = 0
+
+ppm(5, pps) = 1 '停止時的特效
+Timer11(pps).Enabled = False '鳥動畫停止
+If a = 2 Or a = 5 Then Call tai(a)
+
+d = a '判斷是哪一個絕招
+'傷害加成
+If a = 10 Then '跳躍攻擊
+    a = 0: b = 2
+Else
+    a = 5: b = 0
+End If
+
 If ppm(0, pps) = 0 Then
     xhp.Width = 200
     xhp.Visible = True
@@ -3060,10 +3528,19 @@ Else
     xhp.Visible = True
     xhp.Width = ppm(0, pps)
 End If
-'Call voice
-Randomize
-Y = Int(Rnd * 10 + a) + 5
-If xhp.Width - Y <= 0 Then
+
+Call voice
+
+'傷害演算法
+If d < 8 And d <> 3 Then '魔攻
+    y = ys(d)
+Else '物攻
+    Randomize
+    y = Int(Rnd * 10 + a - b) + 2
+End If
+'/傷害演算法
+
+If xhp.Width - y <= 0 Then
     ppm(0, pps) = 0
     xhp.Visible = False
     Label5.Caption = ppm(0, pps) & "/" & amax
@@ -3073,38 +3550,53 @@ If xhp.Width - Y <= 0 Then
     Timer7(pps).Enabled = True '啟動鳥消失動畫
     n = n + 1
 Else
-    xhp.Width = xhp.Width - Y
+    xhp.Width = xhp.Width - y
     ppm(0, pps) = xhp.Width
     Label5.Caption = ppm(0, pps) * akiz & "/" & amax
-    
-    If te = 1 Then Call news '是否跳傷害
-    
 End If
+
+If te = 1 Then Call news '是否跳傷害
+
+ppm(8, pps) = 0
+ppm(7, pps) = ppm(7, pps) + 1 '連擊數
+If ppm(7, pps) >= 2 Then
+    f = "！"
+    If ppm(7, pps) \ 10 >= 1 Then
+        f = "！！"
+    End If
+End If
+Label11.Caption = ppm(7, pps) & " 連擊" & f
+
 '擊退
-If zxcv(3) = 0 Then
-    Image6(pps).Left = Image6(pps).Left + 30
-    Shape2(pps).Left = Image6(pps).Left + Image6(pps).Width \ 2
-Else
-    Image6(pps).Left = Image6(pps).Left - 30
-    Shape2(pps).Left = (Image6(pps).Left + Image6(pps).Width \ 2) - 20
+If d > 2 And d <> 5 And d <> 7 Then
+    If zxcv(3) = 0 Then
+        Image6(pps).Left = Image6(pps).Left + 30
+        Shape2(pps).Left = Image6(pps).Left + Image6(pps).Width \ 2
+    Else
+        Image6(pps).Left = Image6(pps).Left - 30
+        Shape2(pps).Left = (Image6(pps).Left + Image6(pps).Width \ 2) - 20
+    End If
 End If
 
 '分數
 Label9.Caption = Val(Label9.Caption) + 50
 
 Timer22(pps).Enabled = True
+
+Timer36.Enabled = True '一定時間血量
+Timer37.Enabled = True '連擊數閃礫
 DoEvents
 End Sub
 Public Sub news() '顯示傷害演算法☆
 '產生物件
 s(5) = s(5) + 1
-If s(5) = 700 Then s(5) = 0
+If s(5) = 30000 Then s(5) = 0
 Load Label4(s(5))
 '分配位置
 Label4(s(5)).Top = Image6(pps).Top - Label4(s(5)).Height
 Label4(s(5)).Left = Image6(pps).Left + Image6(pps).Width \ 2
 '設定屬性
-Label4(s(5)).Caption = Y * akiz
+Label4(s(5)).Caption = y * akiz
 Label4(s(5)).Visible = True
 Load Timer16(s(5)) '產生一個個別移動    計時器
 Load Timer17(s(5)) '產生一個個別移動移除計時器
@@ -3122,7 +3614,25 @@ Unload Label4(Index)
 Unload Timer17(Index)
 DoEvents
 End Sub
+Private Sub Timer36_Timer() '一定時間讓怪物的血量消失
+Label7.Visible = False
+Label5.Visible = False
+xhp.Visible = False
+Shape6.Visible = False
+Timer37.Enabled = False
+Label11.Visible = False
+End Sub
+Private Sub Timer37_Timer() '連擊數閃礫
+s(21) = s(21) + 1
+If s(21) Mod 2 = 0 Then
+    s(21) = 0
+    Label11.Visible = True
+Else
+    Label11.Visible = False
+End If
+End Sub
 Private Sub Timer6_Timer() '主背景移動★
+Form1.AutoRedraw = True
 dx = dx + 20 * run(1)
 If dx >= 1024 Then dx = 0
 If dx <= 100 Then '=====大於564後就超圖了=====
@@ -3132,15 +3642,18 @@ Else '上面form1截圖 複製到          0,0,表寬,表高,dx,0,表寬,表高
     '上面form1截圖 複製到           0,0,圖寬-dx,表高,dx,0,圖寬-dx,表高
     Form1.PaintPicture Form1.Picture, 1024 - dx, 0, dx - 100, 708, 0, 0, dx - 100, 708, vbSrcCopy
     '上面form1截圖 複製到           圖寬-dx,0,表寬+(dx-圖寬),表高,0,0,表寬+(dx+圖寬),表高
-    
-    s(1) = s(1) + 1
-    If s(1) = 10 Then s(1) = 0: ok = 1: Timer6.Enabled = False '====圖寬=====
 End If
+
+If dx >= 500 Then
+    s(1) = s(1) + 1
+    If s(1) = 3 Then s(1) = 0: ok = 1: Timer6.Enabled = False: zxcv(7) = 0 '====圖寬=====
+End If
+
 DoEvents
 End Sub
 Private Sub sico(a As Integer) '四魂之玉掉落演算法
 Randomize
-f = Int(Rnd * 3) + 1
+f = Int(Rnd * 5) + 1
 If f = 2 Then
     If s(13) = 10 Then
         s(13) = 0

@@ -1,16 +1,16 @@
 VERSION 5.00
 Begin VB.Form Form2 
-   Caption         =   "動作遊戲 v 3.1"
-   ClientHeight    =   8490
+   Caption         =   "怪獸歷險 (動作遊戲 v 3.1)"
+   ClientHeight    =   8190
    ClientLeft      =   1770
    ClientTop       =   1410
    ClientWidth     =   11880
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form2"
-   ScaleHeight     =   8490
+   ScaleHeight     =   8190
    ScaleWidth      =   11880
    Begin VB.Timer Timer2 
-      Interval        =   50
+      Interval        =   30
       Left            =   9960
       Top             =   3000
    End
@@ -463,16 +463,16 @@ Private Sub one(a)
 Select Case a
     Case 0
         Label3.Caption = "神鹿"
-        Label2.Caption = "屬性：光、招喚系" & vbCrLf & "絕招Ⅰ：制裁之光" & vbCrLf & "簡介：來自傳說中神聖巫女-桔梗的力量，" & vbCrLf & "       以破魔的光線淨化敵人，" & "並造成四段連環傷害。" & vbCrLf & "絕招Ⅱ：桔梗的意志" & vbCrLf & "簡介：招喚桔梗，並使用祂的靈力摧毀眼前的敵人" 'ⅠⅡⅢⅣ
+        Label2.Caption = "絕招Ⅰ：制裁之光" & vbCrLf & "簡介：以天使的光線制裁敵人，" & "並造成五段連環傷害。" & vbCrLf & "按法：A" & vbCrLf & "絕招Ⅱ：桔梗的意志" & vbCrLf & "簡介：招喚傳說中的桔梗，並將祂的意志化為力量。" & vbCrLf & "按法：↑A" 'ⅠⅡⅢⅣ
     Case 1
         Label3.Caption = "火鳥"
-        Label2.Caption = "屬性：火、土系" & vbCrLf & "絕招Ⅰ：神聖火柱" & vbCrLf & "簡介：由四大元素中的火元素凝聚而成，" & vbCrLf & "       以自己為中心發出範圍性的五段連環傷害。" & vbCrLf & "絕招Ⅱ：崩裂" & vbCrLf & "       §未完成§"
+        Label2.Caption = "絕招Ⅰ：神聖火柱" & vbCrLf & "簡介：向範圍內的敵人做出十段連環傷害。" & vbCrLf & "按法：A" & vbCrLf & "絕招Ⅱ：崩裂" & vbCrLf & "簡介：全畫面範圍傷害，有機會石化。" & vbCrLf & "按法：↑A"
     Case 2
         Label3.Caption = "雷鳥"
-        Label2.Caption = "屬性：風、水系" & vbCrLf & "絕招Ⅰ：極光暴雷" & vbCrLf & "簡介：由極微小的負離子所構成的超級閃電，" & vbCrLf & "       以自己為中心發出範圍性三段連環的傷害，" & vbCrLf & "       更有機會讓敵人暫時無法動彈。" & vbCrLf & "絕招Ⅱ：殘月漣漪" & vbCrLf & "簡介：借助月的引力，產生強大的波灡" & vbCrLf & "       造成範圍性的五連環傷害"
+        Label2.Caption = "絕招Ⅰ：極光暴雷" & vbCrLf & "簡介：向範圍內的敵人做出三段連環傷害，有機會麻痺。" & vbCrLf & "按法：A" & vbCrLf & "絕招Ⅱ：殘月漣漪" & vbCrLf & "簡介：由月所引起的波灡，造成範圍性的多段傷害。" & vbCrLf & "按法：↑A"
     Case 3
         Label3.Caption = "北極熊"
-        Label2.Caption = "屬性：闇、重力系" & vbCrLf & "絕招Ⅰ：流星散彈雨" & vbCrLf & "簡介：來自中原遙遠西方魔界女子的力量，" & vbCrLf & "       以連續的散彈攻擊身處遠方的敵人。" & vbCrLf & "絕招Ⅱ：超念動" & vbCrLf & "       §未完成§"
+        Label2.Caption = "絕招Ⅰ：流星散彈雨" & vbCrLf & "簡介：發射連續的散彈攻擊敵人。" & vbCrLf & "按法：A" & vbCrLf & "絕招Ⅱ：超念動" & vbCrLf & "簡介：以念力使能量爆炸，造成範圍性的多段傷害。" & vbCrLf & "按法：↑A"
 End Select
 End Sub
 Private Sub Timer2_Timer()

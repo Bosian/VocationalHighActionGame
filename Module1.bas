@@ -68,4 +68,9 @@ Function IsLoad(ByVal a) As Boolean
     IsLoad = Not CBool(Err)
     Err = 0
 End Function
-
+Public Function fscoll(a As Object) As Boolean '¥þµe­±(¿Ã¹õ)¶Ë®`¸I¼²
+If a.Left > 0 And a.Left < Form1.ScaleWidth And a.Top > 0 And a.Top < Form1.ScaleHeight Or _
+   a.Left + a.Width > 0 And a.Left + a.Width < Form1.ScaleWidth And a.Top > 0 And a.Top < Form1.ScaleHeight Or _
+   a.Top + a.Height > 0 And a.Top + a.Height < Form1.ScaleHeight And a.Left > 0 And a.Left < Form1.ScaleWidth Or _
+   a.Top + a.Height > 0 And a.Top + a.Height < Form1.ScaleHeight And a.Left + a.Width > 0 And a.Left + a.Width < Form1.ScaleWidth Then fscoll = True
+End Function

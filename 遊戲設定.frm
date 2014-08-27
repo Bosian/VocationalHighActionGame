@@ -42,7 +42,7 @@ Begin VB.Form Form3
    End
    Begin VB.Frame Frame2 
       Caption         =   "影像、聲音"
-      Height          =   4575
+      Height          =   855
       Left            =   2640
       TabIndex        =   8
       Top             =   120
